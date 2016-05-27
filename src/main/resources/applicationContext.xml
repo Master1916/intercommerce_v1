@@ -61,7 +61,7 @@
 
     <dubbo:application name="mobileCommonService"></dubbo:application>
     <dubbo:registry id="service11" address="zookeeper://192.168.1.50:2181"/>
-    <dubbo:protocol id="service11Protocol" name="dubbo" port="20882"/>
+    <dubbo:protocol id="service11Protocol" name="dubbo" port="20883"/>
     <dubbo:service registry="service11" protocol="service11Protocol" interface="org.mobile.service.MobileUserService" ref="mobileUserService"/>
     <dubbo:reference interface="org.cnepay.customer.service.CustomerService" id="customerService" registry="service11"/>
 
