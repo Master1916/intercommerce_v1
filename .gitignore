@@ -1,0 +1,10 @@
+#file
+intercommerce_v1.iml
+
+#dir
+.idea/
+build/
+.gradle/
+logs/
+classes/
+webroot/uploads/

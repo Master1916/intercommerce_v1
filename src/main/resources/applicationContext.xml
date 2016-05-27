@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor
+	license agreements. See the NOTICE file distributed with this work for additional
+	information regarding copyright ownership. The ASF licenses this file to
+	You under the Apache License, Version 2.0 (the "License"); you may not use
+	this file except in compliance with the License. You may obtain a copy of
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required
+	by applicable law or agreed to in writing, software distributed under the
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+	OF ANY KIND, either express or implied. See the License for the specific
+	language governing permissions and limitations under the License. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:lang="http://www.springframework.org/schema/lang" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://www.springframework.org/schema/lang           http://www.springframework.org/schema/lang/spring-lang.xsd
+                           http://www.springframework.org/schema/util 			http://www.springframework.org/schema/util/spring-util-4.1.xsd
+                           http://www.springframework.org/schema/mvc 			http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+                           http://www.springframework.org/schema/tx 			http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                           http://www.springframework.org/schema/context 		http://www.springframework.org/schema/context/spring-context-4.1.xsd
+                           http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <lang:defaults refresh-check-delay="1"/>
+    <lang:groovy script-source="classpath:org/groovy/service/user/LoginServiceImpl.groovy"/>
+
+    <lang:groovy script-source="classpath:org/groovy/service/user/RegisterServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/user/MessageServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/user/CardManagerServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/user/SigninServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/user/ViewServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/terminal/ActiveAndBindEquipServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/terminal/TerminalServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/merchant/auth/AuthServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/merchant/dzauth/DZAuthServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/common/ManagerServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/common/MobileMessageImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/common/BannerServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/trans/AcqCommonServiceImpl.groovy"/>
+    <lang:groovy script-source="classpath:org/groovy/service/trans/AllowAccountServiceImpl.groovy"/>
+    <lang:groovy id="interceptorService" script-source="classpath:org/groovy/service/common/InterceptorServiceImpl.groovy"/>
+    <lang:groovy id="mobileUserService"  script-source="classpath:org/groovy/service/common/MobileUserServiceImpl.groovy"/>
+
+    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="100000000"/>
+    </bean>
+
+    <!--拦截器-->
+    <mvc:interceptors>
+        <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
+        <bean class="org.mobile.interceptor.ValidateInterceptor">
+            <property name="interceptorService" ref="interceptorService"/>
+        </bean>
+        <bean class="org.mobile.interceptor.UserInterceptor">
+            <property name="interceptorService" ref="interceptorService"/>
+        </bean>
+    </mvc:interceptors>
+
+    <dubbo:application name="mobileCommonService"></dubbo:application>
+    <dubbo:registry id="service11" address="zookeeper://192.168.1.50:2181"/>
+    <dubbo:protocol id="service11Protocol" name="dubbo" port="20882"/>
+    <dubbo:service registry="service11" protocol="service11Protocol" interface="org.mobile.service.MobileUserService" ref="mobileUserService"/>
+    <dubbo:reference interface="org.cnepay.customer.service.CustomerService" id="customerService" registry="service11"/>
+
+    <dubbo:registry protocol="zookeeper" id="service08" address="zookeeper://192.168.1.50:2181"/>
+    <dubbo:reference interface="com.cnepay.app.AppMservice" version="1.0" id="appMservice" registry="service08"/>
+
+
+    <bean id="stringHttpMessageConverter"
+          class="org.springframework.http.converter.StringHttpMessageConverter">
+        <constructor-arg value="UTF-8" index="0"></constructor-arg>
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="byteArrayHttpMessageConverter"
+          class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>image/jpeg</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJacksonHttpMessageConverter" />
+                <ref bean="stringHttpMessageConverter" />
+                <ref bean="byteArrayHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

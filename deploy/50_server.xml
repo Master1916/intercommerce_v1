@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<httpserver class="org.mobile.mpos.JettyServer" logger="Q2" realm="http">
+	<property name="port" value="29002"/>
+</httpserver>
