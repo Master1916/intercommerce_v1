@@ -29,13 +29,11 @@
 
     <lang:groovy script-source="classpath:org/groovy/service/user/RegisterServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/user/MessageServiceImpl.groovy"/>
-    <lang:groovy script-source="classpath:org/groovy/service/user/CardManagerServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/user/SigninServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/user/ViewServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/terminal/ActiveAndBindEquipServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/terminal/TerminalServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/merchant/auth/AuthServiceImpl.groovy"/>
-    <lang:groovy script-source="classpath:org/groovy/service/merchant/dzauth/DZAuthServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/common/ManagerServiceImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/common/MobileMessageImpl.groovy"/>
     <lang:groovy script-source="classpath:org/groovy/service/common/BannerServiceImpl.groovy"/>

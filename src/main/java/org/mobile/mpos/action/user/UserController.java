@@ -2,7 +2,6 @@ package org.mobile.mpos.action.user;
 
 import org.mobile.mpos.common.Mapping;
 import org.mobile.mpos.service.common.MobileMessageService;
-import org.mobile.mpos.service.user.CardManagerService;
 import org.mobile.mpos.service.user.LoginService;
 import org.mobile.mpos.service.user.RegisterService;
 import org.mobile.mpos.service.user.SigninService;
@@ -36,9 +35,6 @@ public class UserController {
 
     @Autowired
     private MobileMessageService mobileMessageService = null;
-
-    @Autowired
-    private CardManagerService cardManagerService = null;
 
     @Autowired
     private SigninService signin = null;
@@ -120,32 +116,5 @@ public class UserController {
     public Object signIn(HttpServletRequest request) {
         return signin.signIn(request);
     }
-
-
-    /**
-     * 绑定/解绑用户银行卡
-     *
-     * @param request
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = Mapping.INTERFACE_URL_BIND_BANK_CARD)
-    public Object bindBankCard(HttpServletRequest request) {
-        return cardManagerService.bindBankCard(request);
-    }
-
-    /**
-     * 获取商户绑定银行卡列表
-     *
-     * @param request
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = Mapping.INTERFACE_URL_LIST_BANK_CARD)
-    public Object listBandCard(HttpServletRequest request) {
-        return cardManagerService.listBandCard(request);
-    }
-
-
 
 }
