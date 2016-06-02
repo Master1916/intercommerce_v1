@@ -55,8 +55,9 @@ HTTP/1.1 403 Forbidden
 | 资源名称     | 路径                                     | Content-Type         | 请求方式     | 维护人     | 是否需要登录|
 |-------------|-----------------------------------------|----------------------|---------------|---------------|---------------|
 | 获取验证码| [/sendMobileMessage](#sendMobileMessage)                      | urlencoded           | POST   | 张树彬     | 否   |
-| 登录| [/login](#login)                      | urlencoded           | POST      | 李飞     | 否   |
-| 注册| [/register](#register)                      | urlencoded           | POST   |  李飞     | 否   |
+| 校验短信验证码| [/checkMobileMessage](#checkMobileMessage)                     | urlencoded           | POST   | 张树彬     | 否   |
+| 注册| [/register](#register)                      | urlencoded           | POST   |  张树彬     | 否   |
+| 登录| [/login](#login)                      | urlencoded           | POST      | 张树彬     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -69,7 +70,7 @@ Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
-appVersion: "ios.未知.1.1.813"
+appVersion: "android.ZFT.1.2.143"
 mobile: "15801376995"
 type: "registe" //注册、忘记密码必传(registe/forget)  (非必传项)
 ```
@@ -91,24 +92,22 @@ Content-Length: 100
    
 }
 ```
+
 ##### [返回目录↑](#content-title)
-<a id="login"></a>
-### 登录  /login
-#### 1\. 手机号登录
+<a id="checkMobileMessage"></a>
+### 校验短信验证码  /checkMobileMessage
+#### 1\. 通过手机号校验短信验证码
 请求：  
 ```
-POST /login HTTP/1.1
+POST /sendMobileMessage HTTP/1.1
 Host: mposp.21er.tk
 Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
-"position": "116.379062,39.97077"
-"password": "qqqqqq"
-"appVersion": "android.ZFT.1.2.143"
-"loginName": "18911156118"
-"reqTime": "20151228143806"
-
+appVersion: "android.ZFT.1.2.143"
+mobile: "15801376995"
+idCode: "8764" //验证码
 ```
 响应：  
 ```
@@ -121,13 +120,11 @@ Cache-Control: no-cache
 Content-Length: 100
 
 {
-    "respTime": "20151228143800",
-    "isSuccess": true,
-    "respCode": "SUCCESS",
-    "respMsg": "登录成功",
-    "isMobileMerchant": true, //是否为手机商户
-    "isPosMerchant": false, //是否为POS商户
-    "posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
+   "respTime":"20151125161740",
+   "isSuccess":true,
+   "respCode":"SUCCESS",
+   "respMsg":"验证成功"
+   
 }
 ```
 
@@ -145,8 +142,7 @@ Content-Length: 30
 
 mobile: "15801376995"
 password: "123456"
-appVersion: "ios.未知.1.1.813"
-idCode: 1234 //验证码
+appVersion: "android.ZFT.1.2.143"
 
 ```
 响应：  
@@ -167,3 +163,40 @@ Content-Length: 100
 }
 ```
 
+##### [返回目录↑](#content-title)
+<a id="login"></a>
+### 登录  /login
+#### 1\. 手机号登录
+请求：  
+```
+POST /login HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"position": "116.379062,39.97077"
+"password": "qqqqqq"
+"appVersion": "android.ZFT.1.2.143"
+"loginName": "18911156118"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "登录成功",
+    "isMobileMerchant": true, //是否为手机商户
+    "isPosMerchant": false //是否为POS商户
+}
+```
