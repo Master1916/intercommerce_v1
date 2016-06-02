@@ -54,10 +54,10 @@ HTTP/1.1 403 Forbidden
 ## 功能路径列表
 | 资源名称     | 路径                                     | Content-Type         | 请求方式     | 维护人     | 是否需要登录|
 |-------------|-----------------------------------------|----------------------|---------------|---------------|---------------|
-| 获取验证码| [/sendMobileMessage](#sendMobileMessage)                      | urlencoded           | POST   | 张树彬     | 否   |
-| 校验短信验证码| [/checkMobileMessage](#checkMobileMessage)                     | urlencoded           | POST   | 张树彬     | 否   |
-| 注册| [/register](#register)                      | urlencoded           | POST   |  张树彬     | 否   |
-| 登录| [/login](#login)                      | urlencoded           | POST      | 张树彬     | 否   |
+| 获取验证码| [/sendMobileMessage.action](#sendMobileMessage)                    | urlencoded           | POST   | 张树彬     | 否   |
+| 校验短信验证码| [/checkMobileMessage.action](#checkMobileMessage)            | urlencoded           | POST   | 张树彬     | 否   |
+| 注册| [/register.action](#register)                      | urlencoded           | POST   |  张树彬     | 否   |
+| 登录| [/login.action](#login)                      | urlencoded           | POST      | 张树彬     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -197,6 +197,9 @@ Content-Length: 100
     "respCode": "SUCCESS",
     "respMsg": "登录成功",
     "isMobileMerchant": true, //是否为手机商户
-    "isPosMerchant": false //是否为POS商户
+    "isPosMerchant": false, //是否为POS商户
+    "idCard":"341225199005063894", //身份证号(当为POS商户时,必返)
+    "realName":"张树彬",//真实姓名(当为POS商户时,必返)
+    "posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
 }
 ```
