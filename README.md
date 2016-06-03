@@ -99,7 +99,7 @@ Content-Length: 100
 #### 1\. 通过手机号校验短信验证码
 请求：  
 ```
-POST /sendMobileMessage HTTP/1.1
+POST /checkMobileMessage HTTP/1.1
 Host: mposp.21er.tk
 Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
