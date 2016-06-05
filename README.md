@@ -58,6 +58,9 @@ HTTP/1.1 403 Forbidden
 | 校验短信验证码| [/checkMobileMessage.action](#checkMobileMessage)            | urlencoded           | POST   | 张树彬     | 否   |
 | 注册| [/register.action](#register)                      | urlencoded           | POST   |  张树彬     | 否   |
 | 登录| [/login.action](#login)                      | urlencoded           | POST      | 张树彬     | 否   |
+| 找回密码| [/forgetPassword.action](#forgetPassword)                      | urlencoded           | POST      | 张树彬     | 否   |
+| 重置密码| [/resetPassword.action](#resetPassword)                      | urlencoded           | POST      | 张树彬     | 是   |
+| 修改密码| [/updatePassword.action](#updatePassword)                      | urlencoded           | POST      | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -72,7 +75,7 @@ Content-Length: 30
 
 appVersion: "android.ZFT.1.2.143"
 mobile: "15801376995"
-type: "forget" //"找回密码":"forget", "重置密码":"reset"  (非必传项)
+type: "forget" //"找回密码":"forget", "重置密码":"reset", "注册":"register"  (非必传项)
 ```
 响应：  
 ```
@@ -201,5 +204,112 @@ Content-Length: 100
     "idCard":"341225199005063894", //身份证号(当为POS商户时,必返)
     "realName":"张树彬",//真实姓名(当为POS商户时,必返)
     "posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
+}
+```
+
+##### [返回目录↑](#content-title)
+<a id="forgetPassword"></a>
+### 找回密码  /forgetPassword
+#### 1\. 通过手机号找回密码
+请求：  
+```
+POST /forgetPassword HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"password": "qqqqqq"
+"appVersion": "android.ZFT.1.2.143"
+"mobile": "15801376995"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "密码变更成功,请重新登陆"
+}
+```
+
+##### [返回目录↑](#content-title)
+<a id="resetPassword"></a>
+### 重置密码  /resetPassword
+#### 1\. 重置密码
+请求：  
+```
+POST /resetPassword HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"password": "qqqqqq"
+"appVersion": "android.ZFT.1.2.143"
+"mobile": "15801376995"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "密码变更成功,请重新登陆"
+}
+```
+
+##### [返回目录↑](#content-title)
+<a id="updatePassword"></a>
+### 修改密码  /updatePassword
+#### 1\. 修改密码
+请求：  
+```
+POST /updatePassword HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"mobile": "15801376995"
+"oldPasswd": "qqqqqq" //原密码
+"newPasswd": "qqqqqq" //新密码
+"confirmPasswd": "qqqqqq" //确认密码
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "密码变更成功,请重新登陆"
 }
 ```
