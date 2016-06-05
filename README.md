@@ -209,7 +209,7 @@ Content-Length: 100
 
 ##### [返回目录↑](#content-title)
 <a id="forgetPassword"></a>
-### 找回密码、重置密码码  /forgetPassword
+### 找回密码、重置密码  /forgetPassword
 #### 1\. 通过手机号找回密码、重置密码
 请求：  
 ```
