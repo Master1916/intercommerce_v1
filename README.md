@@ -61,6 +61,7 @@ HTTP/1.1 403 Forbidden
 | 找回密码| [/forgetPassword.action](#forgetPassword)                      | urlencoded           | POST      | 张树彬     | 否   |
 | 重置密码| [/resetPassword.action](#resetPassword)                      | urlencoded           | POST      | 张树彬     | 是   |
 | 修改密码| [/updatePassword.action](#updatePassword)                      | urlencoded           | POST      | 张树彬     | 是   |
+| 退出登录| [/logout.action](#logout)                      | urlencoded           | POST      | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -311,5 +312,38 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "密码变更成功,请重新登陆"
+}
+```
+
+##### [返回目录↑](#content-title)
+<a id="logout"></a>
+### 退出登录  /logout
+#### 1\. 退出登录
+请求：  
+```
+POST /logout HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "退出成功"
 }
 ```
