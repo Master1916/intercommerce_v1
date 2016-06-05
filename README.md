@@ -75,7 +75,7 @@ Content-Length: 30
 
 appVersion: "android.ZFT.1.2.143"
 mobile: "15801376995"
-type: "forget" //"找回密码":"forget", "重置密码":"reset", "注册":"register"  (非必传项)
+type: "forget" //"找回密码":"forget", "重置密码":"reset", "注册":"register"
 ```
 响应：  
 ```
