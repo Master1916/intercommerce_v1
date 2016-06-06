@@ -65,6 +65,7 @@ HTTP/1.1 403 Forbidden
 | 获取商户名列表| [/listMerchant.action](#listMerchant)                      | urlencoded           | GET |李飞| 是   |
 | 获取商户交易详细信息|[/queryTransInfo.action](#queryTransInfo)                      | urlencoded           | GET |李飞| 是   |
 | 是否有新消息|[/isNewMessage.action](#isNewMessage)                      | urlencoded           | GET |张树彬| 是   |
+| 获取消息列表/变更消息阅读状态|[/message.action](#message)                      | urlencoded           | GET |张树彬| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -485,5 +486,118 @@ Content-Length: 100
     "respCode": "SUCCESS",
     "respMsg": "成功",
     "isNewMessage": true //是否有新消息(true:有, false:无)
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="message"></a>
+###  获取消息列表/变更消息阅读状态 /message
+#### 1\. 获取消息列表/变更消息阅读状态
+请求：  
+```
+GET /message HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+//获取消息列表
+"detail": true,//获取消息
+
+//获取消息头
+"detail": false,//获取消息
+
+//变更消息阅读状态
+"messageId": "5753d725737f247007d596db"//消息id
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+//获取消息列表
+{
+    "respTime": "20160606142841", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "body": [
+        {
+            "content": "就问你怕不怕！！！", 
+            "linkAddress": "", 
+            "title": "商户通内部测试", 
+            "newsId": "575513d784aeddcc333a7a10", 
+            "linkText": "", 
+            "hasLink": false, 
+            "createTimeStr": "20160606140803", 
+            "businessType": "1", 
+            "newsType": "0", 
+            "isRead": 0
+        }, 
+        {
+            "content": "通知测试之所有", 
+            "linkAddress": "", 
+            "title": "通知测试之所有", 
+            "newsId": "5753d725737f247007d596db", 
+            "linkText": "", 
+            "hasLink": false, 
+            "createTimeStr": "20160605153917", 
+            "readTimeStr": "20160605162312", 
+            "businessType": "1", 
+            "newsType": "1", 
+            "isRead": 1
+        }, 
+        {
+            "content": "通知测试之安卓", 
+            "linkAddress": "", 
+            "title": "通知测试之安卓", 
+            "newsId": "5753d711737f247007d596da", 
+            "linkText": "", 
+            "hasLink": false, 
+            "createTimeStr": "20160605153857", 
+            "businessType": "1", 
+            "newsType": "1", 
+            "isRead": 0
+        }
+    ], 
+    "head": {
+        "hasUnRead": true, 
+        "totalCount": 3, 
+        "readCount": 1, 
+        "unReadCount": 2
+    }
+}
+
+//获取消息头
+{
+    "respTime": "20160606145626", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "head": {
+        "hasUnRead": true, 
+        "totalCount": 3, 
+        "readCount": 1, 
+        "unReadCount": 2
+    }
+}
+
+//变更消息阅读状态
+{
+    "respTime": "20160606145829", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "des": "状态修改成功!", 
+    "messageId": "575513d784aeddcc333a7a10"
 }
 ```
