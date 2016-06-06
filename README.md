@@ -532,16 +532,16 @@ Content-Length: 100
     "respMsg": "成功", 
     "body": [
         {
-            "content": "就问你怕不怕！！！", 
-            "linkAddress": "", 
-            "title": "商户通内部测试", 
-            "newsId": "575513d784aeddcc333a7a10", 
-            "linkText": "", 
-            "hasLink": false, 
-            "createTimeStr": "20160606140803", 
-            "businessType": "1", 
-            "newsType": "0", 
-            "isRead": 0
+            "content": "就问你怕不怕！！！", //消息内容
+            "linkAddress": "", //链接地址
+            "title": "商户通内部测试", //消息标题
+            "newsId": "575513d784aeddcc333a7a10",//消息id 
+            "linkText": "", //链接地址文本
+            "hasLink": false, //是否有链接
+            "createTimeStr": "20160606140803",//创建时间 
+            "businessType": "1", //消息所属业务(0：理财, 1：vcPos, 2：Pos)
+            "newsType": "0", //消息类型(0：公告, 1：通知)
+            "isRead": 0//是否已阅读(0:"否", 1:"是")
         }, 
         {
             "content": "通知测试之所有", 
@@ -570,10 +570,10 @@ Content-Length: 100
         }
     ], 
     "head": {
-        "hasUnRead": true, 
-        "totalCount": 3, 
-        "readCount": 1, 
-        "unReadCount": 2
+        "hasUnRead": true, //是否有未读消息
+        "totalCount": 3, //消息总条数
+        "readCount": 1, //已阅读数
+        "unReadCount": 2//未阅读数
     }
 }
 
