@@ -61,6 +61,9 @@ HTTP/1.1 403 Forbidden
 | 找回密码、重置密码| [/forgetPassword.action](#forgetPassword)              | urlencoded           | POST      | 张树彬     | 否   |
 | 修改密码| [/updatePassword.action](#updatePassword)                      | urlencoded           | POST      | 张树彬     | 是   |
 | 退出登录| [/logout.action](#logout)                      | urlencoded           | POST      | 张树彬     | 是   |
+| 获取商户交易列表| [/queryTransList.action](#queryTransList)                      | urlencoded           | GET |李飞| 是   |
+| 获取商户名列表| [/listMerchant.action](#listMerchant)                      | urlencoded           | GET |李飞| 是   |
+| 获取商户交易详细信息 [/queryTransInfo.action](#queryTransInfo)                      | urlencoded           | GET |李飞| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -311,3 +314,142 @@ Content-Length: 100
     "respMsg": "退出成功"
 }
 ```
+##### [返回目录↑](#content-title)
+
+
+<a id="listMerchant"></a>
+### 获取商户名列表  /listMerchant
+#### 1\. 获取商户名列表
+请求：  
+```
+GET /listMerchant HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"type":1, --商户类型  1： pos  2：vcpos
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "list": [    
+      {
+        "merchantid": 676453,--商户ID
+        "merchantNo": "500000000621891"--商户编码
+      },
+    ...
+    ]
+}
+```
+##### [返回目录↑](#content-title)
+
+
+
+<a id="queryTransList"></a>
+### 获取商户交易列表  /queryTransList
+#### 1\. 获取商户交易列表
+请求：  
+```
+GET /queryTransList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"merchantNo": "500000000621891", --商户编码
+"lastID": "", --上次请求最后一笔交易的ID
+"start": "20160606", --起始时间 YYMMDD格式
+"end": "20160606", --结束时间 YYMMDD格式 
+"type":2, --商户类型  1： pos  2：vcpos
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "list": [    
+      {
+        "id": 676453,--交易id
+        "transType": "sale",--交易类型 
+        "transTime": "20160602",--交易时间
+        "amount": 100 --交易金额(分)
+      },
+    ...
+    ]
+}
+```
+##### [返回目录↑](#content-title)
+
+<a id="queryTransInfo"></a>
+### 获取商户交易详细信息  /queryTransInfo
+#### 1\. 获取商户交易详细信息
+请求：  
+```
+GET /queryTransInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"transId": "", --交易ID
+"type":2, --商户类型  1： pos  2：vcpos
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+	"merchantNo": "500000000621891",//商户编号
+	"merchantName": "xxx",//商户名称
+	"transTime": "20160606125959",//交易时间
+	"batchNo": "000001",//交易批次
+	"voucherNo": "000001",//交易流水号
+	"terminalNo": "XXXXX",//交易终端号
+	"cardNoWipe": "62226******5655",//带星号卡号
+	"transType": "sale",//交易类型
+	"transStatus": 1,//交易状态
+	"amount": 11111,//交易金额(分)
+    ]
+}
+```
+##### [返回目录↑](#content-title)
+
