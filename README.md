@@ -63,7 +63,7 @@ HTTP/1.1 403 Forbidden
 | 退出登录| [/logout.action](#logout)                      | urlencoded           | POST      | 张树彬     | 是   |
 | 获取商户交易列表| [/queryTransList.action](#queryTransList)                      | urlencoded           | GET |李飞| 是   |
 | 获取商户名列表| [/listMerchant.action](#listMerchant)                      | urlencoded           | GET |李飞| 是   |
-| 获取商户交易详细信息 [/queryTransInfo.action](#queryTransInfo)                      | urlencoded           | GET |李飞| 是   |
+| 获取商户交易详细信息|[/queryTransInfo.action](#queryTransInfo)                      | urlencoded           | GET |李飞| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
