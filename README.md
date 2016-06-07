@@ -396,11 +396,13 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
+    "count": 134,
+    "amount": 13684228,
     "tranList": [    
       {
         "tranid": 676453,--交易id
-        "transType": "sale",--交易类型 
-        "transTime": "20160602",--交易时间
+        "transType": "sale",--交易类型 sale-消费/sale_void-撤销/auth_comp-预授权完成/auth_comp_cancel-预授权完成撤销/refund-退货 
+        "transTime": "2016-05-15 15:56:25",--交易时间
         "amount": 100 --交易金额(分)
       },
     ...
@@ -447,7 +449,7 @@ Content-Length: 100
 	"voucherNo": "000001",//交易流水号
 	"terminalNo": "XXXXX",//交易终端号
 	"cardNoWipe": "62226******5655",//带星号卡号
-	"transType": "sale",//交易类型 -- auth 预授权/sale 消费/sale_void 消费撤销/refund 退货
+	"transType": "sale",//交易类型 -- sale-消费/sale_void-撤销/auth_comp-预授权完成/auth_comp_cancel-预授权完成撤销/refund-退货 
 	"transStatus": 1,//交易状态 -- 0未知/1正常/2已冲正/3已撤销/4已退款
 	"amount": 11111,//交易金额(分)
     
