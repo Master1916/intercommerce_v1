@@ -263,7 +263,6 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
-"mobile": "15801376995"
 "oldPasswd": "qqqqqq" //原密码
 "passwd": "qqqqqq" //新密码
 
@@ -656,6 +655,8 @@ Content-Length: 100
     ], 
     "head": {
         "hasUnRead": true, //是否有未读消息
+        "unReadTongZhi": false,//是否有未读通知
+        "unReadGongGao": false,//是否有未读公告
         "totalCount": 3, //消息总条数
         "readCount": 1, //已阅读数
         "unReadCount": 2//未阅读数
