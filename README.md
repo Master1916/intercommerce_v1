@@ -527,11 +527,11 @@ Content-Length: 100
     "respMsg": "成功",
     "bindingList": [
     {
-    	    "recordId": 1007,
+    	    "recordId": "1007",
             "merchantName": "郑******",
             "merchantNo": "Z08000000026875",
             "status": 2,//pos机验证状态 1,等待认证，2认证成功，3认证失败，4解绑
-            "url": "appMerchant/posInfoValidation.htm?id=1007"
+            "urlPath": "appMerchant/posInfoValidation.htm?id=1007"
     }
     ...
     ]
