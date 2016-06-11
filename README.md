@@ -377,8 +377,8 @@ Content-Length: 30
 "appVersion": "android.ZFT.1.2.143",
 "merchantNo": "500000000621891", --商户编码
 "lastID": "", --上次请求最后一笔交易的ID
-"start": "20160606", --起始时间 YYMMDD格式
-"end": "20160606", --结束时间 YYMMDD格式 
+"start": "2016-06-06", --起始时间 YYMMDD格式
+"end": "2016-06-06", --结束时间 YYMMDD格式 
 "type":2, --商户类型  1： pos  2：vcpos
 
 ```
