@@ -69,6 +69,7 @@ HTTP/1.1 403 Forbidden
 | 获取已绑定POS商户列表|[/getBindingPosMerchantList.action](#getBindingPosMerchantList)  | urlencoded    | GET |李飞| 是   |
 | 是否有新消息|[/isNewMessage.action](#isNewMessage)                      | urlencoded           | GET |张树彬| 是   |
 | 获取消息列表/变更消息阅读状态|[/message.action](#message)                      | urlencoded           | GET |张树彬| 是   |
+| 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -720,4 +721,119 @@ Content-Length: 100
     "des": "状态修改成功!", 
     "messageId": "575513d784aeddcc333a7a10"
 }
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="settleList"></a>
+###  获取结算列表 /settleList
+#### 1\. 获取结算列表
+请求：  
+```
+GET /settleList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"merchantNo": "500000000876550",//商户号
+"startTime": "2016-3-14",//起始时间
+"endTime": "2016-3-16",//结束时间
+"type": 2,//查询类型(1:POS, 2:VCPOS)
+"uniqueRecord":"10790-6228480010970642611-995100-d0"//最后一条记录的唯一标识(非必传项)
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160612174733", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "isLoaded": false, //是否加载完数据
+    "settleList": [
+        {
+            "RN": 1, //伪列
+            "ID": 10794, //结算id
+            "DATE_CREATED": "2016-03-15 16:30:00",//数据创建时间 
+            "STATUS": 2, //结算状态(1:成功, 2:失败)
+            "TRANS_AMOUNT": 2985.3, //交易金额(单位:元)
+            "SETTLE_MONEY": 2985.3, //结算金额(单位:元)
+            "ACCOUNT_NUM": "6228480010970642611",//结算账户 
+            "MERCHANT_TYPE": "d0", //结算类型
+            "MERCHANT_NAME": "旧数据企业", //商户名称
+            "MERCHANT_NO": "500000000876552", //商户号
+            "SETTLE_DATE": "2016-03-15 16:31:25", //结算日期
+            "UNIQUE_RECORD": "10794-6228480010970642611-298530-d0"//唯一标识
+        }, 
+        {
+            "RN": 2, 
+            "ID": 10793, 
+            "DATE_CREATED": "2016-03-15 16:24:01", 
+            "STATUS": 2, 
+            "TRANS_AMOUNT": 8955.9, 
+            "SETTLE_MONEY": 8955.9, 
+            "ACCOUNT_NUM": "6228480010970642611", 
+            "MERCHANT_TYPE": "d0", 
+            "MERCHANT_NAME": "旧数据企业", 
+            "MERCHANT_NO": "500000000876552", 
+            "SETTLE_DATE": "2016-03-15 16:25:26", 
+            "UNIQUE_RECORD": "10793-6228480010970642611-895590-d0"
+        }, 
+        {
+            "RN": 3, 
+            "ID": 10792, 
+            "DATE_CREATED": "2016-03-15 15:26:00", 
+            "STATUS": 2, 
+            "TRANS_AMOUNT": 2086.77, 
+            "SETTLE_MONEY": 2086.77, 
+            "ACCOUNT_NUM": "6228480010970642611", 
+            "MERCHANT_TYPE": "d0", 
+            "MERCHANT_NAME": "旧数据企业", 
+            "MERCHANT_NO": "500000000876551", 
+            "SETTLE_DATE": "2016-03-15 15:28:24", 
+            "UNIQUE_RECORD": "10792-6228480010970642611-208677-d0"
+        }, 
+        {
+            "RN": 4, 
+            "ID": 10791, 
+            "DATE_CREATED": "2016-03-15 15:18:00", 
+            "STATUS": 2, 
+            "TRANS_AMOUNT": 2086.77, 
+            "SETTLE_MONEY": 2086.77, 
+            "ACCOUNT_NUM": "6228480010970642611", 
+            "MERCHANT_TYPE": "d0", 
+            "MERCHANT_NAME": "旧数据企业", 
+            "MERCHANT_NO": "500000000876551", 
+            "SETTLE_DATE": "2016-03-15 15:19:25", 
+            "UNIQUE_RECORD": "10791-6228480010970642611-208677-d0"
+        }, 
+        {
+            "RN": 5, 
+            "ID": 10790, 
+            "DATE_CREATED": "2016-03-15 15:10:01", 
+            "STATUS": 2, 
+            "TRANS_AMOUNT": 9951, 
+            "SETTLE_MONEY": 9951, 
+            "ACCOUNT_NUM": "6228480010970642611", 
+            "MERCHANT_TYPE": "d0", 
+            "MERCHANT_NAME": "旧数据企业", 
+            "MERCHANT_NO": "500000000876552", 
+            "SETTLE_DATE": "2016-03-15 15:13:25", 
+            "UNIQUE_RECORD": "10790-6228480010970642611-995100-d0"
+        }
+    ], 
+    "settleCount": 7, //总条数
+    "settleAmount": 64136.73//结算总额
+}
+
 ```
