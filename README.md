@@ -762,74 +762,74 @@ Content-Length: 100
     "isLoaded": false, //是否加载完数据
     "settleList": [
         {
-            "RN": 1, //伪列
-            "ID": 10794, //结算id
-            "DATE_CREATED": "2016-03-15 16:30:00",//数据创建时间 
-            "STATUS": 2, //结算状态(1:成功, 2:失败)
-            "TRANS_AMOUNT": 2985.3, //交易金额(单位:元)
-            "SETTLE_MONEY": 2985.3, //结算金额(单位:元)
-            "ACCOUNT_NUM": "6228480010970642611",//结算账户 
-            "MERCHANT_TYPE": "d0", //结算类型
-            "MERCHANT_NAME": "旧数据企业", //商户名称
-            "MERCHANT_NO": "500000000876552", //商户号
-            "SETTLE_DATE": "2016-03-15 16:31:25", //结算日期
-            "UNIQUE_RECORD": "10794-6228480010970642611-298530-d0"//唯一标识
+            "rn": 1, //伪列
+            "id": 10794, //结算id
+            "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
+            "status": 2, //结算状态(1:成功, 2:失败)
+            "transAmount": 2985.3, //交易金额(单位:元)
+            "settleMoney": 2985.3, //结算金额(单位:元)
+            "accountNum": "6228480010970642611", //结算账户 
+            "merchantType": "d0", //结算类型
+            "merchantName": "旧数据企业", //商户名称
+            "merchantNo": "500000000876552", //商户号
+            "settleDate": "2016-03-15 16:31:25", //结算日期
+            "uniqueRecord": "10794-6228480010970642611-298530-d0"//唯一标识
         }, 
         {
-            "RN": 2, 
-            "ID": 10793, 
-            "DATE_CREATED": "2016-03-15 16:24:01", 
-            "STATUS": 2, 
-            "TRANS_AMOUNT": 8955.9, 
-            "SETTLE_MONEY": 8955.9, 
-            "ACCOUNT_NUM": "6228480010970642611", 
-            "MERCHANT_TYPE": "d0", 
-            "MERCHANT_NAME": "旧数据企业", 
-            "MERCHANT_NO": "500000000876552", 
-            "SETTLE_DATE": "2016-03-15 16:25:26", 
-            "UNIQUE_RECORD": "10793-6228480010970642611-895590-d0"
+            "rn": 2, 
+            "id": 10793, 
+            "dateCreated": "2016-03-15 16:24:01", 
+            "status": 2, 
+            "transAmount": 8955.9, 
+            "settleMoney": 8955.9, 
+            "accountNum": "6228480010970642611", 
+            "merchantType": "d0", 
+            "merchantName": "旧数据企业", 
+            "merchantNo": "500000000876552", 
+            "settleDate": "2016-03-15 16:25:26", 
+            "uniqueRecord": "10793-6228480010970642611-895590-d0"
         }, 
         {
-            "RN": 3, 
-            "ID": 10792, 
-            "DATE_CREATED": "2016-03-15 15:26:00", 
-            "STATUS": 2, 
-            "TRANS_AMOUNT": 2086.77, 
-            "SETTLE_MONEY": 2086.77, 
-            "ACCOUNT_NUM": "6228480010970642611", 
-            "MERCHANT_TYPE": "d0", 
-            "MERCHANT_NAME": "旧数据企业", 
-            "MERCHANT_NO": "500000000876551", 
-            "SETTLE_DATE": "2016-03-15 15:28:24", 
-            "UNIQUE_RECORD": "10792-6228480010970642611-208677-d0"
+            "rn": 3, 
+            "id": 10792, 
+            "dateCreated": "2016-03-15 15:26:00", 
+            "status": 2, 
+            "transAmount": 2086.77, 
+            "settleMoney": 2086.77, 
+            "accountNum": "6228480010970642611", 
+            "merchantType": "d0", 
+            "merchantName": "旧数据企业", 
+            "merchantNo": "500000000876551", 
+            "settleDate": "2016-03-15 15:28:24", 
+            "uniqueRecord": "10792-6228480010970642611-208677-d0"
         }, 
         {
-            "RN": 4, 
-            "ID": 10791, 
-            "DATE_CREATED": "2016-03-15 15:18:00", 
-            "STATUS": 2, 
-            "TRANS_AMOUNT": 2086.77, 
-            "SETTLE_MONEY": 2086.77, 
-            "ACCOUNT_NUM": "6228480010970642611", 
-            "MERCHANT_TYPE": "d0", 
-            "MERCHANT_NAME": "旧数据企业", 
-            "MERCHANT_NO": "500000000876551", 
-            "SETTLE_DATE": "2016-03-15 15:19:25", 
-            "UNIQUE_RECORD": "10791-6228480010970642611-208677-d0"
+            "rn": 4, 
+            "id": 10791, 
+            "dateCreated": "2016-03-15 15:18:00", 
+            "status": 2, 
+            "transAmount": 2086.77, 
+            "settleMoney": 2086.77, 
+            "accountNum": "6228480010970642611", 
+            "merchantType": "d0", 
+            "merchantName": "旧数据企业", 
+            "merchantNo": "500000000876551", 
+            "settleDate": "2016-03-15 15:19:25", 
+            "uniqueRecord": "10791-6228480010970642611-208677-d0"
         }, 
         {
-            "RN": 5, 
-            "ID": 10790, 
-            "DATE_CREATED": "2016-03-15 15:10:01", 
-            "STATUS": 2, 
-            "TRANS_AMOUNT": 9951, 
-            "SETTLE_MONEY": 9951, 
-            "ACCOUNT_NUM": "6228480010970642611", 
-            "MERCHANT_TYPE": "d0", 
-            "MERCHANT_NAME": "旧数据企业", 
-            "MERCHANT_NO": "500000000876552", 
-            "SETTLE_DATE": "2016-03-15 15:13:25", 
-            "UNIQUE_RECORD": "10790-6228480010970642611-995100-d0"
+            "rn": 5, 
+            "id": 10790, 
+            "dateCreated": "2016-03-15 15:10:01", 
+            "status": 2, 
+            "transAmount": 9951, 
+            "settleMoney": 9951, 
+            "accountNum": "6228480010970642611", 
+            "merchantType": "d0", 
+            "merchantName": "旧数据企业", 
+            "merchantNo": "500000000876552", 
+            "settleDate": "2016-03-15 15:13:25", 
+            "uniqueRecord": "10790-6228480010970642611-995100-d0"
         }
     ], 
     "settleCount": 7, //总条数
