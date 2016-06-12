@@ -763,7 +763,7 @@ Content-Length: 100
     "settleList": [
         {
             "rn": 1, //伪列
-            "id": 10794, //结算id
+            "sid": 10794, //结算id
             "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
             "status": 2, //结算状态(1:成功, 2:失败)
             "transAmount": 2985.3, //交易金额(单位:元)
@@ -777,7 +777,7 @@ Content-Length: 100
         }, 
         {
             "rn": 2, 
-            "id": 10793, 
+            "sid": 10793, 
             "dateCreated": "2016-03-15 16:24:01", 
             "status": 2, 
             "transAmount": 8955.9, 
@@ -791,7 +791,7 @@ Content-Length: 100
         }, 
         {
             "rn": 3, 
-            "id": 10792, 
+            "sid": 10792, 
             "dateCreated": "2016-03-15 15:26:00", 
             "status": 2, 
             "transAmount": 2086.77, 
@@ -805,7 +805,7 @@ Content-Length: 100
         }, 
         {
             "rn": 4, 
-            "id": 10791, 
+            "sid": 10791, 
             "dateCreated": "2016-03-15 15:18:00", 
             "status": 2, 
             "transAmount": 2086.77, 
@@ -819,7 +819,7 @@ Content-Length: 100
         }, 
         {
             "rn": 5, 
-            "id": 10790, 
+            "sid": 10790, 
             "dateCreated": "2016-03-15 15:10:01", 
             "status": 2, 
             "transAmount": 9951, 
