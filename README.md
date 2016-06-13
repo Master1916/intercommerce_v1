@@ -70,6 +70,7 @@ HTTP/1.1 403 Forbidden
 | 是否有新消息|[/isNewMessage.action](#isNewMessage)                      | urlencoded           | GET |张树彬| 是   |
 | 获取消息列表/变更消息阅读状态|[/message.action](#message)                      | urlencoded           | GET |张树彬| 是   |
 | 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
+| 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -762,12 +763,11 @@ Content-Length: 100
     "isLoaded": false, //是否加载完数据
     "settleList": [
         {
-            "rn": 1, //伪列
             "sid": 10794, //结算id
             "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
             "status": 2, //结算状态(1:成功, 2:失败)
-            "transAmount": 2985.3, //交易金额(单位:元)
-            "settleMoney": 2985.3, //结算金额(单位:元)
+            "transAmount": 29853, //交易金额(单位:分)
+            "settleMoney": 29853, //结算金额(单位:分)
             "accountNum": "6228480010970642611", //结算账户 
             "merchantType": "d0", //结算类型
             "merchantName": "旧数据企业", //商户名称
@@ -776,64 +776,65 @@ Content-Length: 100
             "uniqueRecord": "10794-6228480010970642611-298530-d0"//唯一标识
         }, 
         {
-            "rn": 2, 
             "sid": 10793, 
             "dateCreated": "2016-03-15 16:24:01", 
             "status": 2, 
-            "transAmount": 8955.9, 
-            "settleMoney": 8955.9, 
+            "transAmount": 89559, 
+            "settleMoney": 89559, 
             "accountNum": "6228480010970642611", 
             "merchantType": "d0", 
             "merchantName": "旧数据企业", 
             "merchantNo": "500000000876552", 
             "settleDate": "2016-03-15 16:25:26", 
             "uniqueRecord": "10793-6228480010970642611-895590-d0"
-        }, 
-        {
-            "rn": 3, 
-            "sid": 10792, 
-            "dateCreated": "2016-03-15 15:26:00", 
-            "status": 2, 
-            "transAmount": 2086.77, 
-            "settleMoney": 2086.77, 
-            "accountNum": "6228480010970642611", 
-            "merchantType": "d0", 
-            "merchantName": "旧数据企业", 
-            "merchantNo": "500000000876551", 
-            "settleDate": "2016-03-15 15:28:24", 
-            "uniqueRecord": "10792-6228480010970642611-208677-d0"
-        }, 
-        {
-            "rn": 4, 
-            "sid": 10791, 
-            "dateCreated": "2016-03-15 15:18:00", 
-            "status": 2, 
-            "transAmount": 2086.77, 
-            "settleMoney": 2086.77, 
-            "accountNum": "6228480010970642611", 
-            "merchantType": "d0", 
-            "merchantName": "旧数据企业", 
-            "merchantNo": "500000000876551", 
-            "settleDate": "2016-03-15 15:19:25", 
-            "uniqueRecord": "10791-6228480010970642611-208677-d0"
-        }, 
-        {
-            "rn": 5, 
-            "sid": 10790, 
-            "dateCreated": "2016-03-15 15:10:01", 
-            "status": 2, 
-            "transAmount": 9951, 
-            "settleMoney": 9951, 
-            "accountNum": "6228480010970642611", 
-            "merchantType": "d0", 
-            "merchantName": "旧数据企业", 
-            "merchantNo": "500000000876552", 
-            "settleDate": "2016-03-15 15:13:25", 
-            "uniqueRecord": "10790-6228480010970642611-995100-d0"
         }
     ], 
     "settleCount": 7, //总条数
-    "settleAmount": 64136.73//结算总额
+    "settleAmount": 6413673//结算总额(单位:分)
 }
 
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="settleInfo"></a>
+### 获取结算详细信息  /settleInfo
+#### 1\. 获取结算详细信息
+请求：  
+```
+GET /settleInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"sid": "", //结算ID
+"merchantType":d0, //商户类型  d0:D0商户 tn:TN商户
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
+    "status": 2, //结算状态(1:成功, 2:失败)
+    "transAmount": 29853, //交易金额(单位:分)
+    "settleMoney": 29853, //结算金额(单位:分)
+    "accountNum": "6228480010970642611", //结算账户 
+    "merchantName": "旧数据企业", //商户名称
+    "merchantNo": "500000000876552", //商户号
+    "settleDate": "2016-03-15 16:31:25", //结算日期
+}
 ```
