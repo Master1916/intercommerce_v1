@@ -691,8 +691,8 @@ Content-Length: 100
     ], 
     "head": {
         "hasUnRead": true, //是否有未读消息
-        "unReadTongZhi": false,//是否有未读通知
-        "unReadGongGao": false,//是否有未读公告
+        "unReadNotice": false,//是否有未读通知
+        "unReadBulletin": false,//是否有未读公告
         "totalCount": 3, //消息总条数
         "readCount": 1, //已阅读数
         "unReadCount": 2//未阅读数
