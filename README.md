@@ -69,6 +69,7 @@ HTTP/1.1 403 Forbidden
 | 获取已绑定POS商户列表|[/getBindingPosMerchantList.action](#getBindingPosMerchantList)  | urlencoded    | GET |李飞| 是   |
 | 是否有新消息|[/isNewMessage.action](#isNewMessage)                      | urlencoded           | GET |张树彬| 是   |
 | 获取消息列表/变更消息阅读状态|[/message.action](#message)                      | urlencoded           | GET |张树彬| 是   |
+| 变更手机全部消息阅读状态|[/messageReaded.action](#messageReaded)                      | urlencoded           | POST |张树彬| 是   |
 | 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
 | 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
 ----------------------------------------------------------------------------------
@@ -575,7 +576,6 @@ Content-Length: 100
 
 ##### [返回目录↑](#content-title)
 
-
 <a id="isNewMessage"></a>
 ###  是否有新消息 /isNewMessage
 #### 1\. 是否有新消息
@@ -721,6 +721,41 @@ Content-Length: 100
     "respMsg": "成功", 
     "des": "状态修改成功!", 
     "messageId": "575513d784aeddcc333a7a10"
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="messageReaded"></a>
+###  变更手机全部消息阅读状态 /messageReaded
+#### 1\. 通过手机号变更全部消息的阅读状态
+请求：  
+```
+GET /messageReaded HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "isUpdateComplete": true //是否变更完成(true:是, false:否)
 }
 ```
 
