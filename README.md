@@ -731,7 +731,7 @@ Content-Length: 100
 #### 1\. 通过手机号变更全部消息的阅读状态
 请求：  
 ```
-GET /messageReaded HTTP/1.1
+POST /messageReaded HTTP/1.1
 Host: mposp.21er.tk
 Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
