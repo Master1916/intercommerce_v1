@@ -799,7 +799,6 @@ Content-Length: 100
     "settleList": [
         {
             "sid": 10794, //结算id
-            "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
             "status": 2, //结算状态(1:成功, 2:失败)
             "transAmount": 29853, //交易金额(单位:分)
             "settleMoney": 29853, //结算金额(单位:分)
