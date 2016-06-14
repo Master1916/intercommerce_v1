@@ -812,7 +812,6 @@ Content-Length: 100
         }, 
         {
             "sid": 10793, 
-            "dateCreated": "2016-03-15 16:24:01", 
             "status": 2, 
             "transAmount": 89559, 
             "settleMoney": 89559, 
