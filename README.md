@@ -72,6 +72,8 @@ HTTP/1.1 403 Forbidden
 | 变更手机全部消息阅读状态|[/messageReaded.action](#messageReaded)                      | urlencoded           | POST |张树彬| 是   |
 | 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
 | 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
+| 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
+| 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -871,3 +873,84 @@ Content-Length: 100
     "settleDate": "2016-03-15 16:31:25", //结算日期
 }
 ```
+
+##### [返回目录↑](#content-title)
+
+<a id="banner"></a>
+### 获取广告信息  /banner
+#### 1\. 获取广告信息
+请求：  
+```
+GET /banner HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160616114625", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "body": [
+        {
+            "title": "广告2", //广告名称
+            "imageUrl": "http://localhost:29008/downloadBanner.action?fileName=main_home_ad_2.png&appVersion=ios.ZFT.1.2.143&type=banner&date=20160612&aid=2", //图片路径
+            "targetUrl": "www.baidu.com"//跳转地址
+        }
+    ], 
+    "head": {
+        "total": 1//广告总条数
+    }
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="downloadBanner"></a>
+### 广告位图片下载  /downloadBanner
+#### 1\. 广告位图片下载
+请求：  
+```
+GET /downloadImg HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+appVersion: "ios.未知.1.1.813"
+fileName  : "b500000000620994.png" //图片名称
+type	  : "advertisement"//获取类型(advertisement:"广告", campaign:"活动")
+date      : "20160616"//日期
+aid       : 2//(广告、活动)id
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    图片文件
+}
+```
+
