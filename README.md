@@ -74,6 +74,7 @@ HTTP/1.1 403 Forbidden
 | 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
 | 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
 | 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
+| 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -951,3 +952,85 @@ Content-Length: 100
 }
 ```
 
+##### [返回目录↑](#content-title)
+
+<a id="campaign"></a>
+###  获取活动列表 /campaign
+#### 1\. 获取活动列表
+请求：  
+```
+GET /campaign HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"campaignCount": "5"//每页显示的条数(非必传项)
+"lastId":"54"//最后一条活动的id(非必传项)
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160616194028", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "isLoaded": true, //是否加载完成
+    "campaignSumCount": 6, //活动总条数
+    "campaignList": [
+        {
+            "cid": 58, //活动id
+            "title": "活动5", //活动标题
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/58/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", //图片路径
+            "linkText": "百度", //链接文字
+            "targetUrl": "https://www.baidu.com"//跳转地址
+        }, 
+        {
+            "cid": 57, 
+            "title": "活动4", 
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/57/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
+            "linkText": "百度", 
+            "targetUrl": "https://www.baidu.com"
+        }, 
+        {
+            "cid": 56, 
+            "title": "公共活动3", 
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/56/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
+            "linkText": "百度", 
+            "targetUrl": "https://www.baidu.com"
+        }, 
+        {
+            "cid": 55, 
+            "title": "活动2", 
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/55/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
+            "linkText": "百度", 
+            "targetUrl": "https://www.baidu.com"
+        }, 
+        {
+            "cid": 54, 
+            "title": "公共活动1", 
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/54/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
+            "linkText": "百度", 
+            "targetUrl": "https://www.baidu.com"
+        }, 
+        {
+            "cid": 53, 
+            "title": "就问你怕不怕", 
+            "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/53/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
+            "linkText": "详情猛戳", 
+            "targetUrl": "https://www.baidu.com"
+        }
+    ]
+}
+
+```
