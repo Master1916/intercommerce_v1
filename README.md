@@ -195,7 +195,7 @@ Content-Length: 30
 "password": "qqqqqq"
 "appVersion": "android.ZFT.1.2.143"
 "loginName": "18911156118"
-
+"registId": "101d855909475902a45"
 ```
 响应：  
 ```
