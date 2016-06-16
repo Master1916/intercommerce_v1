@@ -863,7 +863,6 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
-    "dateCreated": "2016-03-15 16:30:00", //数据创建时间 
     "status": 2, //结算状态(1:成功, 2:失败)
     "transAmount": 29853, //交易金额(单位:分)
     "settleMoney": 29853, //结算金额(单位:分)
