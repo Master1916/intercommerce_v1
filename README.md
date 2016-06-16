@@ -416,8 +416,8 @@ Content-Length: 30
 "appVersion": "android.ZFT.1.2.143",
 "merchantNo": "500000000621891", --商户编码
 "lastID": "", --上次请求最后一笔交易的ID
-"start": "2016-06-06", --起始时间 yyyy-MM-dd格式
-"end": "2016-06-06", --结束时间 yyyy-MM-dd格式 
+"startTime": "2016-06-06", --起始时间 yyyy-MM-dd格式
+"endTime": "2016-06-06", --结束时间 yyyy-MM-dd格式 
 "type":2, --商户类型  1： pos  2：vcpos
 
 ```
@@ -519,7 +519,7 @@ Content-Length: 100
     "respMsg": "成功",
 	"merchantNo": "500000000621891",//商户编号
 	"merchantName": "xxx",//商户名称
-	"transTime": "20160606125959",//交易时间
+	"transTime": "2016-05-15 15:56:25",//交易时间
 	"batchNo": "000001",//交易批次
 	"voucherNo": "000001",//交易流水号
 	"terminalNo": "XXXXX",//交易终端号
@@ -808,7 +808,7 @@ Content-Length: 100
             "merchantType": "d0", //结算类型
             "merchantName": "旧数据企业", //商户名称
             "merchantNo": "500000000876552", //商户号
-            "settleDate": "2016-03-15 16:31:25", //结算日期
+            "settleDate": "2016-03-15", //结算日期
             "uniqueRecord": "10794-6228480010970642611-298530-d0"//唯一标识
         }, 
         {
@@ -820,7 +820,7 @@ Content-Length: 100
             "merchantType": "d0", 
             "merchantName": "旧数据企业", 
             "merchantNo": "500000000876552", 
-            "settleDate": "2016-03-15 16:25:26", 
+            "settleDate": "2016-03-15", 
             "uniqueRecord": "10793-6228480010970642611-895590-d0"
         }
     ], 
@@ -870,7 +870,7 @@ Content-Length: 100
     "accountNum": "6228480010970642611", //结算账户 
     "merchantName": "旧数据企业", //商户名称
     "merchantNo": "500000000876552", //商户号
-    "settleDate": "2016-03-15 16:31:25", //结算日期
+    "settleDate": "2016-03-15", //结算日期
 }
 ```
 
@@ -950,7 +950,7 @@ Cache-Control: no-cache
 Content-Length: 100
 
 {
-    图片文件
+    字节流
 }
 ```
 
