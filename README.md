@@ -907,7 +907,7 @@ Content-Length: 100
     "body": [
         {
             "title": "广告2", //广告名称
-            "imageUrl": "http://localhost:29008/downloadBanner.action?fileName=main_home_ad_2.png&appVersion=ios.ZFT.1.2.143&type=banner&date=20160612&aid=2", //图片路径
+            "imageUrl": "http://localhost:29008/downloadBanner.action?fileName=main_home_ad_2.png&appVersion=ios.ZFT.1.2.143&type=banner", //图片路径
             "targetUrl": "www.baidu.com"//跳转地址
         }
     ], 
@@ -933,8 +933,6 @@ Content-Length: 30
 appVersion: "ios.未知.1.1.813"
 fileName  : "b500000000620994.png" //图片名称
 type	  : "advertisement"//获取类型(advertisement:"广告", campaign:"活动")
-date      : "20160616"//日期
-aid       : 2//(广告、活动)id
 ```
 
 响应： 
