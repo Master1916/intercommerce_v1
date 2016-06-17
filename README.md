@@ -75,7 +75,7 @@ HTTP/1.1 403 Forbidden
 | 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
 | 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
-| 静态页面显示 | [/showHtml.action](#showHtml.action)                      | urlencoded           | GET   | 张树彬     | 否   |
+| 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
