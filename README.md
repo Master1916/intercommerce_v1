@@ -75,6 +75,7 @@ HTTP/1.1 403 Forbidden
 | 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
 | 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
+| 静态页面显示 | [/showHtml.action](#showHtml.action)                      | urlencoded           | GET   | 张树彬     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1033,4 +1034,37 @@ Content-Length: 100
     ]
 }
 
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="showHtml"></a>
+### 静态页面显示  /showHtml
+#### 1\. 静态页面显示
+请求：  
+```
+GET /showHtml HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+html: "XXX.html"//请求的静态页面(agreement.html:移动支付业务服务协议, register-agreement.html:中汇商户通用户协议)
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+	HTML页面
+}
 ```
