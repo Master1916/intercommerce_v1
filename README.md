@@ -33,6 +33,10 @@ Server: Nginx
 Content-Type: application/json; charset=utf-8
 Connection: keep-alive
 Cache-Control: no-cache
+Cookie: "***********"
+WSSESSION: ""//session信息
+isPosMerchant: false, //是否为POS商户
+posStatus: 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
 Content-Length: 100
 
 ...body...
