@@ -803,7 +803,6 @@ Content-Length: 100
     "isSuccess": true, 
     "respCode": "SUCCESS", 
     "respMsg": "成功", 
-    "isLoaded": false, //是否加载完数据
     "settleList": [
         {
             "sid": 10794, //结算id
@@ -830,8 +829,8 @@ Content-Length: 100
             "uniqueRecord": "10793-6228480010970642611-895590-d0"
         }
     ], 
-    "settleCount": 7, //总条数
-    "settleAmount": 6413673//结算总额(单位:分)
+    "settleCount": 7, //总条数(下拉刷新才会返回)
+    "settleAmount": 6413673//结算总额(单位:分)(下拉刷新才会返回)
 }
 
 ```
@@ -990,8 +989,7 @@ Content-Length: 100
     "isSuccess": true, 
     "respCode": "SUCCESS", 
     "respMsg": "成功", 
-    "isLoaded": true, //是否加载完成
-    "campaignSumCount": 6, //活动总条数
+    "campaignSumCount": 6, //活动总条数(下拉刷新才会返回)
     "campaignList": [
         {
             "cid": 58, //活动id
