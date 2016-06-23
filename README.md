@@ -569,6 +569,7 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
+    "bindingCount": 13,
     "bindingList": [
     {
     	    "recordId": "1007",
