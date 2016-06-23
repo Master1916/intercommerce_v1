@@ -869,7 +869,7 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
-    "status": 2, //结算状态(1:成功, 2:失败)
+    "status": "已付款", //付款状态
     "transAmount": 29853, //交易金额(单位:分)
     "settleMoney": 29853, //结算金额(单位:分)
     "accountNum": "6228480010970642611", //结算账户 
