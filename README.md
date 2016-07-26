@@ -80,7 +80,7 @@ HTTP/1.1 403 Forbidden
 | 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
-| 获取未绑定的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET   | 张树彬  | 是   |
+| 获取未绑定手刷设备的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1076,8 +1076,8 @@ Content-Length: 100
 ##### [返回目录↑](#content-title)
 
 <a id="unbindTerminalPosMerchant"></a>
-### 获取未绑定的POS商户列表  /unbindTerminalPosMerchant
-#### 1\. 获取未绑定的POS商户列表
+### 获取未绑定手刷设备的POS商户列表  /unbindTerminalPosMerchant
+#### 1\. 获取未绑定手刷设备的POS商户列表
 请求：  
 ```
 GET /unbindTerminalPosMerchant HTTP/1.1
