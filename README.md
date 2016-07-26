@@ -80,6 +80,7 @@ HTTP/1.1 403 Forbidden
 | 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
+| 获取未绑定的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET   | 张树彬  | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1069,5 +1070,83 @@ Content-Length: 100
 
 {
 	HTML页面
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="unbindTerminalPosMerchant"></a>
+### 获取未绑定的POS商户列表  /unbindTerminalPosMerchant
+#### 1\. 获取未绑定的POS商户列表
+请求：  
+```
+GET /unbindTerminalPosMerchant HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+//请求失败
+{
+    "respTime": "20160726102050", 
+    "isSuccess": false, 
+    "respCode": "UNBIND_POS_MERCHANT", //1.未绑定POS商户
+    "respCode": "UNADD_TERMINAL", //2.未增机
+    "respCode": "ALL_ADD_TERMINAL_USED", //3.增机名额已全部被使用
+    "respMsg": "..."
+}
+
+//请求成功
+{
+    "respTime": "20160726103914", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "unBindPosMerchant": [ //未绑定设备的POS商户列表
+        {
+            "posMerchantId": 675151,  //POS商户ID
+            "merchantNo": "Z08000000620593", //商户号
+            "merchantName": "六******",  //商户名称
+            "rateInfos": [ //结算模式信息
+                {
+                    "mId": 5,  //增机主表ID
+                    "settlementInterval": "T+1",//结算模式 
+                    "availableBindNum": 2 //剩余可绑数量
+                }, 
+                {
+                    "mId": 4, 
+                    "settlementInterval": "T+1", 
+                    "availableBindNum": 2
+                }
+            ]
+        }, 
+        {
+            "posMerchantId": 675292, 
+            "merchantNo": "Z08000000620776", 
+            "merchantName": "三******", 
+            "rateInfos": [
+                {
+                    "mId": 3, 
+                    "settlementInterval": "T+1", 
+                    "availableBindNum": 2
+                }
+            ]
+        }
+    ]
 }
 ```
