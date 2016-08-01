@@ -225,9 +225,9 @@ Content-Length: 100
     "bindPosMerchantNum": 11,//绑定的POS商户数量
     "bindTerminalNum": 0,//绑定成功的终端数量
     "passTerminalNum": 0//增机申请成功的数量
+    "posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
     --"idCard":"341225199005063894", //身份证号(当为POS商户时,必返)//已移除
     --"realName":"张树彬",//真实姓名(当为POS商户时,必返)//已移除
-    --"posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)//已移除
 }
 ```
 
