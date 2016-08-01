@@ -81,6 +81,7 @@ HTTP/1.1 403 Forbidden
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取未绑定手刷设备的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET  | 张树彬 |是|
+| 获取已绑定的商户设备信息 | [/bindMerchantTerminalInfo.action](#bindMerchantTerminalInfo)| urlencoded | GET  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1150,6 +1151,54 @@ Content-Length: 100
                 }
             ]
         }
+    ]
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="bindMerchantTerminalInfo"></a>
+### 获取已绑定的商户设备信息  /bindMerchantTerminalInfo
+#### 1\. 获取已绑定的商户设备信息
+请求：  
+```
+GET /bindMerchantTerminalInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160729202905", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "bindTerminalInfo": [
+        {
+            "mId": 765782, //商户Id
+            "merchantName": "掌富通",//商户名称 
+            "merchantNo": "500000000720172", //商户号
+            "ksnNo": "7000100000008177", //ksn号
+            "bluetoothName": "AC079158", //蓝牙名称
+            "macAddress": "8C:DE:52:C3:51:0D", //mac地址
+            "merchantFeeRate": "1.25"//费率信息
+        },
+        ...
     ]
 }
 ```
