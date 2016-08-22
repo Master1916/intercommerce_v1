@@ -1195,8 +1195,8 @@ Content-Length: 100
             "merchantNo": "500000000720172", //商户号
             "ksnNo": "7000100000008177", //ksn号
             "bluetoothName": "AC079158", //蓝牙名称
-            "macAddress": "8C:DE:52:C3:51:0D", //mac地址
-            "merchantFeeRate": "1.25"//费率信息
+            "macAddress": "8C:DE:52:C3:51:0D" //mac地址
+            --"merchantFeeRate": "1.25"//费率信息 //已移除
         },
         ...
     ]
