@@ -402,7 +402,7 @@ Content-Length: 100
     "respMsg": "成功",
     "merchantList": [    
       {
-        "merchantid": 676453,--商户ID
+        "merchantId": 676453,--商户ID
         "merchantNo": "500000000621891"--商户编码
       },
     ...
