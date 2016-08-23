@@ -82,6 +82,7 @@ HTTP/1.1 403 Forbidden
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取未绑定手刷设备的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET  | 张树彬 |是|
 | 获取已绑定的商户设备信息 | [/bindMerchantTerminalInfo.action](#bindMerchantTerminalInfo)| urlencoded | GET  | 张树彬 |是|
+| 获取用户已绑和未绑的附属信息 | [/userSatelliteInfo.action](#userSatelliteInfo)| urlencoded | GET  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1199,6 +1200,87 @@ Content-Length: 100
             --"merchantFeeRate": "1.25"//费率信息 //已移除
         },
         ...
+    ]
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="userSatelliteInfo"></a>
+### 获取用户已绑和未绑的附属信息  /userSatelliteInfo
+#### 1\. 获取用户已绑和未绑的附属信息
+请求：  
+```
+GET /userSatelliteInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160729202905", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功", 
+    "bindPosMerchantNum": 11,//绑定的POS商户数量
+    "bindTerminalNum": 0,//绑定成功的终端数量
+    "passTerminalNum": 0//增机申请成功的数量
+    "bindTerminalInfo": [ //已绑设备的信息
+        {
+            "mId": 765782, //商户Id
+            "merchantName": "掌富通",//商户名称 
+            "merchantNo": "500000000720172", //商户号
+            "ksnNo": "7000100000008177", //ksn号
+            "bluetoothName": "AC079158", //蓝牙名称
+            "macAddress": "8C:DE:52:C3:51:0D" //mac地址
+        },
+        ...
+    ],
+    "unBindPosMerchant": [ //未绑定设备的POS商户列表
+        {
+            "posMerchantId": 675151,  //POS商户ID
+            "merchantNo": "Z08000000620593", //商户号
+            "merchantName": "六******",  //商户名称
+            "rateInfos": [ //结算模式信息
+                {
+                    "mId": 5,  //增机主表ID
+                    "settlementInterval": "T+1",//结算模式 
+                    "availableBindNum": 2 //剩余可绑数量
+                }, 
+                {
+                    "mId": 4, 
+                    "settlementInterval": "T+1", 
+                    "availableBindNum": 2
+                }
+            ]
+        }, 
+        {
+            "posMerchantId": 675292, 
+            "merchantNo": "Z08000000620776", 
+            "merchantName": "三******", 
+            "rateInfos": [
+                {
+                    "mId": 3, 
+                    "settlementInterval": "T+1", 
+                    "availableBindNum": 2
+                }
+            ]
+        }
     ]
 }
 ```
