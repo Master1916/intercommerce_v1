@@ -85,6 +85,7 @@ HTTP/1.1 403 Forbidden
 | 获取用户已绑和未绑的附属信息 | [/userSatelliteInfo.action](#userSatelliteInfo)| urlencoded | GET  | 张树彬 |是|
 | 获取终端IC公钥 | [/getTerminalICKey.action](#getTerminalICKey)| urlencoded | GET  | 张树彬 |是|
 | 签到 | [/signIn.action](#signIn)| urlencoded | GET  | 张树彬 |是|
+| 更新终端IC公钥状态 | [/updateTerminalICKeyStatus.action](#updateTerminalICKeyStatus)| urlencoded | POST  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1301,7 +1302,6 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143",
-"ksnNo": "600003387718",
 
 ```
 
@@ -1389,5 +1389,42 @@ Content-Length: 100
         "ksnNo": "600003387718"
     }, 
     "isUpdateICKey": false
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="updateTerminalICKeyStatus"></a>
+### 更新终端IC公钥状态  /updateTerminalICKeyStatus
+#### 1\. 更新终端IC公钥状态
+请求：  
+```
+POST /updateTerminalICKeyStatus HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"ksnNo": "600003387718",
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160830113902", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "成功"
 }
 ```
