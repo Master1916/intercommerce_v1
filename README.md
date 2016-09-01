@@ -86,6 +86,7 @@ HTTP/1.1 403 Forbidden
 | 获取终端IC公钥 | [/getTerminalICKey.action](#getTerminalICKey)| urlencoded | GET  | 张树彬 |是|
 | 签到 | [/signIn.action](#signIn)| urlencoded | GET  | 张树彬 |是|
 | 更新终端IC公钥状态 | [/updateTerminalICKeyStatus.action](#updateTerminalICKeyStatus)| urlencoded | POST  | 张树彬 |是|
+| 绑定手刷设备 | [/activeAndBindEquip.action](#activeAndBindEquip)| urlencoded | POST  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1426,5 +1427,45 @@ Content-Length: 100
     "isSuccess": true, 
     "respCode": "SUCCESS", 
     "respMsg": "成功"
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="activeAndBindEquip"></a>
+### 绑定手刷设备  /activeAndBindEquip
+#### 1\. 绑定手刷设备
+请求：  
+```
+POST /activeAndBindEquip HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"ksnNo": "600003387718", //设备号
+"model": "landim35", //终端型号
+"macAddress:"8C:DE:52:3C:8F:C8", //设备MAC地址
+"mId": 13 //增机主表Id
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160830113902", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "激活绑定设备成功"
 }
 ```
