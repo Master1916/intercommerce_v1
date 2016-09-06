@@ -77,7 +77,7 @@ HTTP/1.1 403 Forbidden
 | 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
 | 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
 | 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
-| 广告位图片下载 | [/downloadBanner](#downloadBanner)                      | urlencoded           | GET   | 张树彬     | 否   |
+| 图片下载 | [/downloadImg](#downloadImg)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取未绑定手刷设备的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET  | 张树彬 |是|
@@ -935,9 +935,9 @@ Content-Length: 100
 
 ##### [返回目录↑](#content-title)
 
-<a id="downloadBanner"></a>
-### 广告位图片下载  /downloadBanner
-#### 1\. 广告位图片下载
+<a id="downloadImg"></a>
+### 图片下载  /downloadImg
+#### 1\. 图片下载
 请求：  
 ```
 GET /downloadImg HTTP/1.1
