@@ -87,6 +87,7 @@ HTTP/1.1 403 Forbidden
 | 签到 | [/signIn.action](#signIn)| urlencoded | GET  | 张树彬 |是|
 | 更新终端IC公钥状态 | [/updateTerminalICKeyStatus.action](#updateTerminalICKeyStatus)| urlencoded | POST  | 张树彬 |是|
 | 绑定手刷设备 | [/activeAndBindEquip.action](#activeAndBindEquip)| urlencoded | POST  | 张树彬 |是|
+| 发送交易小票 | [/transMessage.action](#transMessage)| urlencoded | POST  | 张树彬 |是|
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1467,5 +1468,47 @@ Content-Length: 100
     "isSuccess": true, 
     "respCode": "SUCCESS", 
     "respMsg": "激活绑定设备成功"
+}
+```
+
+##### [返回目录↑](#content-title)
+
+<a id="transMessage"></a>
+### 发送交易小票  /transMessage
+#### 1\. 发送交易小票
+请求：  
+```
+POST /transMessage HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143",
+"reqNo": "000064", //交易流水号
+"amount": 10000, //交易金额(单位:分)
+"terminalNo: "33365845", //终端号
+"merchantNo" :"Z08224546146546",//商户号
+"batchNo": "000001", //批次号
+"mobile": "18611111117"//短信接收者的手机号
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20160830113902", 
+    "isSuccess": true, 
+    "respCode": "SUCCESS", 
+    "respMsg": "交易小票短信发送成功,注意查收"
 }
 ```
