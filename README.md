@@ -1008,42 +1008,49 @@ Content-Length: 100
             "title": "活动5", //活动标题
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/58/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", //图片路径
             "linkText": "百度", //链接文字
-            "targetUrl": "https://www.baidu.com"//跳转地址
+            "targetUrl": "https://www.baidu.com",//跳转地址
+            "linkContent": "活动5"//活动内容
+            
         }, 
         {
             "cid": 57, 
             "title": "活动4", 
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/57/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
             "linkText": "百度", 
-            "targetUrl": "https://www.baidu.com"
+            "targetUrl": "https://www.baidu.com",
+            "linkContent": "活动5"//活动内容
         }, 
         {
             "cid": 56, 
             "title": "公共活动3", 
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/56/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
             "linkText": "百度", 
-            "targetUrl": "https://www.baidu.com"
+            "targetUrl": "https://www.baidu.com",
+            "linkContent": "活动5"//活动内容
         }, 
         {
             "cid": 55, 
             "title": "活动2", 
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/55/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
             "linkText": "百度", 
-            "targetUrl": "https://www.baidu.com"
+            "targetUrl": "https://www.baidu.com",
+            "linkContent": "活动5"//活动内容
         }, 
         {
             "cid": 54, 
             "title": "公共活动1", 
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/54/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
             "linkText": "百度", 
-            "targetUrl": "https://www.baidu.com"
+            "targetUrl": "https://www.baidu.com",
+            "linkContent": "活动5"//活动内容
         }, 
         {
             "cid": 53, 
             "title": "就问你怕不怕", 
             "imageUrl": "http://192.168.1.240:29008/downloadBanner.action?fileName=201606/53/picIos.jpg&appVersion=ios.ZFT.1.2.143&type=campaign", 
             "linkText": "详情猛戳", 
-            "targetUrl": "https://www.baidu.com"
+            "targetUrl": "https://www.baidu.com",
+            "linkContent": "活动5"//活动内容
         }
     ]
 }
