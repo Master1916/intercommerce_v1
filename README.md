@@ -228,9 +228,9 @@ Content-Length: 100
     "respMsg": "登录成功",
     "isMobileMerchant": true, //是否为手机商户
     "isPosMerchant": false, //是否为POS商户
-    "bindPosMerchantNum": 11,//已绑定的POS商户数量
-    "bindTerminalNum": 0,//已绑定成功的手刷终端数量
-    "passTerminalNum": 0//手刷设备增机申请成功的终端数量
+    --"bindPosMerchantNum": 11,//已绑定的POS商户数量//已移除
+    --"bindTerminalNum": 0,//已绑定成功的手刷终端数量//已移除
+    --"passTerminalNum": 0//手刷设备增机申请成功的终端数量//已移除
     "posStatus": 0 //POS认证状态 (0未绑定 ,1待刷卡，2待认证,3实名认证通过)
     --"idCard":"341225199005063894", //身份证号(当为POS商户时,必返)//已移除
     --"realName":"张树彬",//真实姓名(当为POS商户时,必返)//已移除
