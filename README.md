@@ -1390,6 +1390,7 @@ Content-Length: 100
     "isSuccess": true, 
     "respCode": "SUCCESS", 
     "respMsg": "成功", 
+    "traceNo": 20 ,
     "terminalWorkKeyInfo": {
         "keyType": "3DES", 
         "keyValue": "F5CE03DF66C3792D00B3F5B2577DE804", 
