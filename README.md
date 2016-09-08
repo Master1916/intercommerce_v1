@@ -88,6 +88,7 @@ HTTP/1.1 403 Forbidden
 | 更新终端IC公钥状态 | [/updateTerminalICKeyStatus.action](#updateTerminalICKeyStatus)| urlencoded | POST  | 张树彬 |是|
 | 绑定手刷设备 | [/activeAndBindEquip.action](#activeAndBindEquip)| urlencoded | POST  | 张树彬 |是|
 | 发送交易小票 | [/transMessage.action](#transMessage)| urlencoded | POST  | 张树彬 |是|
+| 消费 | [/sale](#sale)                      | urlencoded           | POST   | 李飞     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1519,3 +1520,64 @@ Content-Length: 100
     "respMsg": "交易小票短信发送成功,注意查收"
 }
 ```
+
+##### [返回目录↑](#content-title)
+<a id="sale"></a>
+### 消费  /sale
+#### 1\. 消费
+请求：  
+```
+POST /sale HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+appVersion: "ios.未知.1.1.813",
+ksnNo: "800090000004",
+reqNo: "129",
+merhantNo:'Z08000000026875',
+position: "117.194778,39.113809",
+currency: "CNY",
+amount: "300",//单位分
+cardSerialNum: "001",
+icData: "XXXXXXXX",
+encPinblock: "XXXXX",
+encTracks: "TRACK2",
+checksum:"XXX"
+
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "reqNo":"129",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "merchantName":"XXX",
+    "merchantNo":"111",    
+    "terminalNo":"22222",    
+    "operatorNo":"01",    
+    "resultCode":"00",    
+    "cardNoWipe":"333**8233",    
+    "amount":"300",    
+    "currency":"CNY",    
+    "voucherNo":"000130",   
+    "batchNo":"001234",   
+    "transTime":"20151212125959",   
+    "refNo":"666666",
+    "authNo":"666666777777",
+    "script":"ic55"
+}
+```
+
+##### [返回目录↑](#content-title)
