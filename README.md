@@ -1197,6 +1197,16 @@ Connection: keep-alive
 Cache-Control: no-cache
 Content-Length: 100
 
+//请求失败
+{
+    "respTime": "20160726102050", 
+    "isSuccess": false, 
+    "respCode": "UNBIND_POS_MERCHANT", //1.未绑定POS商户
+    "respCode": "UNADD_TERMINAL", //2.未增机
+    "respMsg": "..."
+}
+
+//请求成功
 {
     "respTime": "20160729202905", 
     "isSuccess": true, 
