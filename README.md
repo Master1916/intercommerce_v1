@@ -89,6 +89,7 @@ HTTP/1.1 403 Forbidden
 | 绑定手刷设备 | [/activeAndBindEquip.action](#activeAndBindEquip)| urlencoded | POST  | 张树彬 |是|
 | 发送交易小票 | [/transMessage.action](#transMessage)| urlencoded | POST  | 张树彬 |是|
 | 消费 | [/sale](#sale)                      | urlencoded           | POST   | 李飞     | 是   |
+| 查询交易状态| [/transStatus](#transStatus)                      | urlencoded           | POST   | 李飞     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1592,3 +1593,59 @@ Content-Length: 100
 ```
 
 ##### [返回目录↑](#content-title)
+
+
+<a id="transStatus"></a>
+### 查询交易状态  /transStatus
+#### 1\. 查询交易状态
+请求：  
+```
+POST /transStatus HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+amount: "11111"
+origTransType: "sale"
+origReqNo: "1111"
+origReqTime: "20151124111059"
+reqNo: "qqq"
+reqTime: "20151124111059"
+appVersion: "ios.未知.1.1.813"
+
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "reqNo": 645254,
+    "merchantName": "数目数目",
+    "merchantNo": 111111111,
+    "terminalNo": 22222,
+    "operatorNo": 01,
+    "cardNoWipe": 645***254,
+    "amount": 1234,
+    "currency": "CNY",
+    "issuer": "XX银行",
+    "voucherNo": 2222,
+    "batchNo": 123,
+    "transTime": 20151130125253,
+    "refNo": 1234,
+    "authNo": 1234,
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "respMsg":"验证成功"
+}
+```
+##### [返回目录↑](#content-title)
+
