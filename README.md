@@ -91,6 +91,7 @@ HTTP/1.1 403 Forbidden
 | 消费 | [/sale](#sale)                      | urlencoded           | POST   | 李飞     | 是   |
 | 查询交易状态| [/transStatus](#transStatus)                      | urlencoded           | POST   | 李飞     | 是   |
 | IC回调 | [/transNotify](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
+| 获取强制更新的参数 | [/getForceUpdate](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1689,6 +1690,39 @@ Content-Length: 100
     "isSuccess":true,
     "respCode":"SUCCESS",
     "respMsg":"查询成功"
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="getForceUpdate"></a>
+### 获取强制更新的参数  /getForceUpdate
+#### 1\. 获取强制更新的参数
+请求：  
+```
+GET /getForceUpdate HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+appVersion: "ios.未知.1.1.813"
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "minVersion":'1.2.126',//IOS最低版本
+    "respTime":"20151130125253",
+    "isSuccess":true,
 }
 ```
 ##### [返回目录↑](#content-title)
