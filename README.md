@@ -1671,7 +1671,6 @@ origReqNo:"1234"
 icData:"asfakfjasklfdsa"
 cardNo:"622266000000"
 cardSerialNum:"01"
-tradeType:1 //交易类型(1:T1, 16:D0, 17:D0秒到)
 ```
 
 响应： 
