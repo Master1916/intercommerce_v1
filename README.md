@@ -1205,7 +1205,7 @@ Content-Length: 100
     "respTime": "20160726102050", 
     "isSuccess": false, 
     "respCode": "UNBIND_POS_MERCHANT", //1.未绑定POS商户
-    "respCode": "UNADD_TERMINAL", //2.收款需要绑定刷卡设备配合使用，立即去绑定吧！
+    "respCode": "UNBIND_TERMINAL", //2.收款需要绑定刷卡设备配合使用，立即去绑定吧！
     "respMsg": "..."
 }
 
