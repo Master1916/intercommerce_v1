@@ -77,7 +77,7 @@ HTTP/1.1 403 Forbidden
 | 获取结算列表|[/settleList.action](#settleList)                      | urlencoded           | GET |张树彬| 是   |
 | 获取结算详情|[/settleInfo.action](#settleInfo)                      | urlencoded           | GET |张树彬| 是   |
 | 获取广告信息|[/banner.action](#banner)                      | urlencoded           | GET |张树彬| 否   |
-| 图片下载 | [/downloadImg](#downloadImg)                      | urlencoded           | GET   | 张树彬     | 否   |
+| 图片下载 | [/downloadImg.action](#downloadImg)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取活动列表|[/campaign.action](#campaign)                      | urlencoded           | GET |张树彬| 是   |
 | 静态页面显示 | [/showHtml.action](#showHtml)                      | urlencoded           | GET   | 张树彬     | 否   |
 | 获取未绑定手刷设备的POS商户列表 | [/unbindTerminalPosMerchant.action](#unbindTerminalPosMerchant)| urlencoded | GET  | 张树彬 |是|
@@ -88,12 +88,12 @@ HTTP/1.1 403 Forbidden
 | 更新终端IC公钥状态 | [/updateTerminalICKeyStatus.action](#updateTerminalICKeyStatus)| urlencoded | POST  | 张树彬 |是|
 | 绑定手刷设备 | [/activeAndBindEquip.action](#activeAndBindEquip)| urlencoded | POST  | 张树彬 |是|
 | 发送交易小票 | [/transMessage.action](#transMessage)| urlencoded | POST  | 张树彬 |是|
-| 消费 | [/sale](#sale)                      | urlencoded           | POST   | 李飞     | 是   |
-| 查询交易状态| [/transStatus](#transStatus)                      | urlencoded           | POST   | 李飞     | 是   |
-| IC回调 | [/transNotify](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
-| 获取强制更新的参数 | [/getForceUpdate](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
-| 获取回单商户列表 | [/receiptMerchantList](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
-| 获取回单信息列表 | [/receiptList](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 消费 | [/sale.action](#sale)                      | urlencoded           | POST   | 李飞     | 是   |
+| 查询交易状态| [/transStatus.action](#transStatus)                      | urlencoded           | POST   | 李飞     | 是   |
+| IC回调 | [/transNotify.action](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
+| 获取强制更新的参数 | [/getForceUpdate.action](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
+| 获取回单商户列表 | [/receiptMerchantList.action](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取回单信息列表 | [/receiptList.action](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
