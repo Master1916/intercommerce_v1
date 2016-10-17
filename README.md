@@ -93,6 +93,7 @@ HTTP/1.1 403 Forbidden
 | IC回调 | [/transNotify](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
 | 获取强制更新的参数 | [/getForceUpdate](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
 | 获取回单商户列表 | [/receiptMerchantList](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取回单信息列表 | [/receiptList](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1768,6 +1769,78 @@ Content-Length: 100
 	{
             "merchantNo": "Z08111111111113", 
             "merchantName": "小丸子3" 
+        }
+    ]
+    "respMsg":"查询成功"
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="receiptList"></a>
+### 获取回单信息列表  /receiptList
+#### 1\. 获取回单信息列表
+请求：  
+```
+GET /receiptList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"merchantNo":"Z08111111111111" //商户编号
+"startTime": "2016-3-14",//起始时间
+"endTime": "2016-3-16",//结束时间
+"receiptStatus":1 //回单状态(1:全部, 2:待回单, 3:待审核, 4:已完成, 5:已关闭)
+"receiptCount": "5"//每页显示的条数(非必传项)
+"lastId":"54"//最后一条回单的id(非必传项)
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "receiptList":[ //回单列表
+        {
+            "receiptId": 1112321, //回单Id
+            "transAccountNo": "6217000010012052349", //交易卡号
+	    "transAmount":100, //交易金额
+	    "transTime":"2016-03-15 17:30:59", //交易时间
+	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
+	    "receiptType":1, //回单类型
+	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
+	    "rejectDesc":"性别不合适"//驳回原因项
+        }, 
+        {
+            "receiptId": 1112321, //回单Id
+            "transAccountNo": "6217000010012052349", //交易卡号
+	    "transAmount":100, //交易金额
+	    "transTime":"2016-03-15 17:30:59", //交易时间
+	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
+	    "receiptType":1, //回单类型
+	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
+	    "rejectDesc":"性别不合适"//驳回原因项
+        }, 
+	{
+            "receiptId": 1112321, //回单Id
+            "transAccountNo": "6217000010012052349", //交易卡号
+	    "transAmount":100, //交易金额
+	    "transTime":"2016-03-15 17:30:59", //交易时间
+	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
+	    "receiptType":1, //回单类型
+	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
+	    "rejectDesc":"性别不合适"//驳回原因项
         }
     ]
     "respMsg":"查询成功"
