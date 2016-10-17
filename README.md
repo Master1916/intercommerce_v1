@@ -94,6 +94,7 @@ HTTP/1.1 403 Forbidden
 | 获取强制更新的参数 | [/getForceUpdate.action](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
 | 获取回单商户列表 | [/receiptMerchantList.action](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
 | 获取回单信息列表 | [/receiptList.action](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1844,6 +1845,49 @@ Content-Length: 100
         }
     ]
     "respMsg":"查询成功"
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="receipt"></a>
+### 回单  /receipt
+#### 1\. 回单
+请求：  
+```
+POST /receipt HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"receiptId":1112321 //回单id
+"receiptType": 1,//回单类型
+"transArea": "北京市北京市海淀区",//交易区域
+"areaDetailInfo":"马甸桥金澳国际写字楼",//详细街道信息
+"merchantName":"小丸子",//商户信息
+"mobileNo":"15801379665",//联系电话
+"remark":"说点什么好",//备注
+"salesSlip": 图片, //签购单图片(非必传)
+"standBook": 图片 //台账图片(非必传)
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "respMsg":"成功"
 }
 ```
 ##### [返回目录↑](#content-title)
