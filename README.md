@@ -95,6 +95,7 @@ HTTP/1.1 403 Forbidden
 | 获取回单商户列表 | [/receiptMerchantList.action](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
 | 获取回单信息列表 | [/receiptList.action](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
 | 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
+| 获取回单详情 | [/receiptInfo.action](#receiptInfo)    | urlencoded           | GET   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -956,7 +957,7 @@ Content-Length: 30
 
 appVersion: "ios.未知.1.1.813"
 fileName  : "b500000000620994.png" //图片名称
-type	  : "advertisement"//获取类型(advertisement:"广告", campaign:"活动")
+type	  : "advertisement"//获取类型(advertisement:"广告", campaign:"活动", salesSlip: "签购单", standBook:"台账")
 ```
 
 响应： 
@@ -1819,7 +1820,7 @@ Content-Length: 100
 	    "transAmount":100, //交易金额
 	    "transTime":"2016-03-15 17:30:59", //交易时间
 	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
-	    "receiptType":1, //回单类型
+	    "receiptType":1, //回单类型(1、3：调单, 2:查询)
 	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
 	    "rejectDesc":"性别不合适"//驳回原因项
         }, 
@@ -1862,8 +1863,8 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
-"receiptId":1112321 //回单id
-"receiptType": 1,//回单类型
+"receiptId":1112321, //回单id
+"receiptType": 1,//回单类型(1、3：调单, 2:查询)
 "transArea": "北京市北京市海淀区",//交易区域
 "areaDetailInfo":"马甸桥金澳国际写字楼",//详细街道信息
 "merchantName":"小丸子",//商户信息
@@ -1887,6 +1888,58 @@ Content-Length: 100
     "respTime":"20151130125253",
     "isSuccess":true,
     "respCode":"SUCCESS",
+    "respMsg":"成功"
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="receiptInfo"></a>
+### 获取回单详情  /receiptInfo
+#### 1\. 获取回单详情
+请求：  
+```
+POST /receiptInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"receiptId":1112321 //回单id
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "receiptInfo":{
+    	"merchantNo":"Z08111111111111", //商户编号
+	"merchantName":"小丸子", //商户名称
+	"transAmount":100,//交易金额
+	"receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
+	"isOverdue":1,//是否逾期(1:是, 0:否)
+	"dealTime":"2016-03-15 17:30:59",//处理日期
+	"requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
+	"receiptType":1,//回单类型(1、3：调单, 2:查询)
+	"terminalNo": 22222,//终端号
+	"transAccount": "6217000010012052349",//卡号
+	"moneyStatus":"冻结",//资金状态
+	"transNo":"ASD79233",//交易号
+	"transTime":"2016-03-16 17:30:59", //交易时间
+	"transType":"预授权",//交易类型
+	"transArea":"北京市北京市海淀区"//交易区域
+    }
     "respMsg":"成功"
 }
 ```
