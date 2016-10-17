@@ -1823,24 +1823,24 @@ Content-Length: 100
 	    "rejectDesc":"性别不合适"//驳回原因项
         }, 
         {
-            "receiptId": 1112321, //回单Id
-            "transAccountNo": "6217000010012052349", //交易卡号
-	    "transAmount":100, //交易金额
-	    "transTime":"2016-03-15 17:30:59", //交易时间
-	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
-	    "receiptType":1, //回单类型
-	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
-	    "rejectDesc":"性别不合适"//驳回原因项
+            "receiptId": 1112321, 
+            "transAccountNo": "6217000010012052349", 
+	    "transAmount":100, 
+	    "transTime":"2016-03-15 17:30:59",
+	    "requireReplyTime":"2016-03-16 17:30:59", 
+	    "receiptType":1, 
+	    "receiptStatus":1, 
+	    "rejectDesc":"性别不合适"
         }, 
 	{
-            "receiptId": 1112321, //回单Id
-            "transAccountNo": "6217000010012052349", //交易卡号
-	    "transAmount":100, //交易金额
-	    "transTime":"2016-03-15 17:30:59", //交易时间
-	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
-	    "receiptType":1, //回单类型
-	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
-	    "rejectDesc":"性别不合适"//驳回原因项
+            "receiptId": 1112321,
+            "transAccountNo": "6217000010012052349",
+	    "transAmount":100,
+	    "transTime":"2016-03-15 17:30:59",
+	    "requireReplyTime":"2016-03-16 17:30:59",
+	    "receiptType":1,
+	    "receiptStatus":1,
+	    "rejectDesc":"性别不合适"
         }
     ]
     "respMsg":"查询成功"
