@@ -1794,7 +1794,7 @@ Content-Length: 30
 "merchantNo":"Z08111111111111" //商户编号
 "startTime": "2016-3-14",//起始时间
 "endTime": "2016-3-16",//结束时间
-"receiptStatus":1 //回单状态(1:全部, 2:待回单, 3:待审核, 4:已完成, 5:已关闭)
+"receiptStatus":0 //回单状态(0:全部, 2:待回单, 3:待审核, 4:已完成, 5:已关闭)
 "receiptCount": "5"//每页显示的条数(非必传项)
 "lastId":"54"//最后一条回单的id(非必传项)
 ```
@@ -1865,7 +1865,9 @@ Content-Length: 30
 "appVersion": "android.ZFT.1.2.143"
 "receiptId":1112321, //回单id
 "receiptType": 1,//回单类型(1、3：调单, 2:查询)
-"transArea": "北京市北京市海淀区",//交易区域
+"transProvName": "北京市",//交易地址(省)
+"transCityNamee": "北京市",//交易地址(市)
+"transCountyName": "海淀区",//交易地址(区)
 "areaDetailInfo":"马甸桥金澳国际写字楼",//详细街道信息
 "merchantName":"小丸子",//商户信息
 "mobileNo":"15801379665",//联系电话
@@ -1907,6 +1909,7 @@ Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
 "receiptId":1112321 //回单id
+"receiptType": 1,//回单类型(1、3：调单, 2:查询)
 ```
 响应： 
 
