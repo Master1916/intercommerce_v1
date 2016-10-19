@@ -1866,7 +1866,7 @@ Content-Length: 30
 "receiptId":1112321, //回单id
 "receiptType": 1,//回单类型(1、3：调单, 2:查询)
 "transProvName": "北京市",//交易地址(省)
-"transCityNamee": "北京市",//交易地址(市)
+"transCityName": "北京市",//交易地址(市)
 "transCountyName": "海淀区",//交易地址(区)
 "areaDetailInfo":"马甸桥金澳国际写字楼",//详细街道信息
 "merchantName":"小丸子",//商户信息
