@@ -1873,7 +1873,8 @@ Content-Length: 30
 "mobileNo":"15801379665",//联系电话
 "remark":"说点什么好",//备注
 "salesSlip": 图片, //签购单图片(非必传)
-"standBook": 图片 //台账图片(非必传)
+"standBook": 图片, //台账图片(非必传)
+"merchantNo":"Z08000000000001"//商户号
 ```
 响应： 
 
