@@ -1820,7 +1820,7 @@ Content-Length: 100
 	    "transAmount":100, //交易金额
 	    "transTime":"2016-03-15 17:30:59", //交易时间
 	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
-	    "receiptType":1, //回单类型(1、3：调单, 2:查询)
+	    "receiptType":1, //回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
 	    "rejectDesc":"性别不合适"//驳回原因项
         }, 
@@ -1864,7 +1864,7 @@ Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
 "receiptId":1112321, //回单id
-"receiptType": 1,//回单类型(1、3：调单, 2:查询)
+"receiptType": 1,//回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 "transProvName": "北京市",//交易地址(省)
 "transCityName": "北京市",//交易地址(市)
 "transCountyName": "海淀区",//交易地址(区)
@@ -1910,7 +1910,7 @@ Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
 "receiptId":1112321 //回单id
-"receiptType": 1,//回单类型(1、3：调单, 2:查询)
+"receiptType": 1,//回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 ```
 响应： 
 
@@ -1935,7 +1935,7 @@ Content-Length: 100
 	"isOverdue":1,//是否逾期(1:是, 0:否)
 	"dealTime":"2016-03-15 17:30:59",//处理日期
 	"requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
-	"receiptType":1,//回单类型(1、3：调单, 2:查询)
+	"receiptType":1,//回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 	"terminalNo": 22222,//终端号
 	"transAccount": "6217000010012052349",//卡号
 	"moneyStatus":"冻结",//资金状态
