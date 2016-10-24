@@ -1944,7 +1944,11 @@ Content-Length: 100
 	"transNo":"ASD79233",//交易号
 	"transTime":"2016-03-16 17:30:59", //交易时间
 	"transType":"预授权",//交易类型
-	"transArea":"北京市北京市海淀区",//交易区域
+	"transProvName": "北京市",//交易地址(省)
+        "transCityName": "北京市",//交易地址(市)
+        "transCountyName": "海淀区",//交易地址(区)
+        "areaDetailInfo":"马甸桥金澳国际写字楼",//详细街道信息
+        "mobileNo":"15801376998",//联系电话
 	"replyCount":2,//重复回单次数(当回单状态为重新回单时,必传)
 	"salesSlipUUID": null,//签购单文件唯一标识
         "standBookUUID": null//台账文件唯一标识
