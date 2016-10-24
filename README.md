@@ -1944,7 +1944,8 @@ Content-Length: 100
 	"transNo":"ASD79233",//交易号
 	"transTime":"2016-03-16 17:30:59", //交易时间
 	"transType":"预授权",//交易类型
-	"transArea":"北京市北京市海淀区"//交易区域
+	"transArea":"北京市北京市海淀区",//交易区域
+	"replyCount":2//重复回单次数(当回单状态为重新回单时,必传)
     }
     "respMsg":"成功"
 }
