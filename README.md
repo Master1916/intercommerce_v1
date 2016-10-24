@@ -1939,7 +1939,7 @@ Content-Length: 100
 	"requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
 	"receiptType":1,//回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 	"terminalNo": 22222,//终端号
-	"transAccount": "6217000010012052349",//卡号
+	"transAccountNo": "6217000010012052349",//卡号
 	"moneyStatus":"冻结",//资金状态
 	"transNo":"ASD79233",//交易号
 	"transTime":"2016-03-16 17:30:59", //交易时间
