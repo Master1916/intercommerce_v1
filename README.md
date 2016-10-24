@@ -957,7 +957,7 @@ Content-Length: 30
 
 appVersion: "ios.未知.1.1.813"
 fileName  : "b500000000620994.png" //图片名称
-type	  : "advertisement"//获取类型(advertisement:"广告", campaign:"活动", salesSlip: "签购单", standBook:"台账")
+type	  : "advertisement"//获取类型(BANNER:"广告", CAMPAIGN:"活动", TRANS_RISK:("签购单","台账"))
 ```
 
 响应： 
