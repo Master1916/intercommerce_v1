@@ -1819,6 +1819,7 @@ Content-Length: 100
             "transAccountNo": "6217000010012052349", //交易卡号
 	    "transAmount":100, //交易金额
 	    "transTime":"2016-03-15 17:30:59", //交易时间
+            "createDate"      : "2016-03-15 19:30:59", //创建时间
 	    "requireReplyTime":"2016-03-16 17:30:59", //要求回复时间
 	    "receiptType":1, //回单类型(1:差错交易查询,2:风险协查调单,3差错交易调单)
 	    "receiptStatus":1, //回单状态(1:回单, 2:重新回单, 3:待审核, 4:完成回单, 5:关闭回单)
@@ -1829,6 +1830,7 @@ Content-Length: 100
             "transAccountNo": "6217000010012052349", 
 	    "transAmount":100, 
 	    "transTime":"2016-03-15 17:30:59",
+	    "createDate"      : "2016-03-15 19:30:59", //创建时间
 	    "requireReplyTime":"2016-03-16 17:30:59", 
 	    "receiptType":1, 
 	    "receiptStatus":1, 
@@ -1839,6 +1841,7 @@ Content-Length: 100
             "transAccountNo": "6217000010012052349",
 	    "transAmount":100,
 	    "transTime":"2016-03-15 17:30:59",
+	    "createDate"      : "2016-03-15 19:30:59", //创建时间
 	    "requireReplyTime":"2016-03-16 17:30:59",
 	    "receiptType":1,
 	    "receiptStatus":1,
