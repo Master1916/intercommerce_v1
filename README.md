@@ -93,7 +93,7 @@ HTTP/1.1 403 Forbidden
 | IC回调 | [/transNotify.action](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
 | 获取强制更新的参数 | [/getForceUpdate.action](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
 | 获取回单商户列表 | [/receiptMerchantList.action](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
-| 获取回单信息列表 | [/receiptList.action](#receiptList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取回单信息列表 | [/listReceipts.action](#listReceipts)    | urlencoded           | GET   | 张树彬     | 是   |
 | 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
 | 获取回单详情 | [/receiptInfo.action](#receiptInfo)    | urlencoded           | GET   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
@@ -1779,12 +1779,12 @@ Content-Length: 100
 ##### [返回目录↑](#content-title)
 
 
-<a id="receiptList"></a>
-### 获取回单信息列表  /receiptList
+<a id="listReceipts"></a>
+### 获取回单信息列表  /listReceipts
 #### 1\. 获取回单信息列表
 请求：  
 ```
-GET /receiptList HTTP/1.1
+GET /listReceipts HTTP/1.1
 Host: mposp.21er.tk
 Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
