@@ -1795,7 +1795,6 @@ Content-Length: 30
 "startTime": "2016-3-14",//起始时间
 "endTime": "2016-3-16",//结束时间
 "receiptStatus":0 //回单状态(0:全部, 2:待回单, 3:待审核, 4:已完成, 5:已关闭)
-"receiptCount": "5"//每页显示的条数(非必传项)
 "lastId":"54"//最后一条回单的id(非必传项)
 ```
 响应： 
@@ -1813,6 +1812,7 @@ Content-Length: 100
     "respTime":"20151130125253",
     "isSuccess":true,
     "respCode":"SUCCESS",
+    "receiptCount": "3"// 列表条数
     "receiptList":[ //回单列表
         {
             "receiptId": 1112321, //回单Id
