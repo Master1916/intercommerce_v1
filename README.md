@@ -92,7 +92,7 @@ HTTP/1.1 403 Forbidden
 | 查询交易状态| [/transStatus.action](#transStatus)                      | urlencoded           | POST   | 李飞     | 是   |
 | IC回调 | [/transNotify.action](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
 | 获取强制更新的参数 | [/getForceUpdate.action](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
-| 获取回单商户列表 | [/receiptMerchantList.action](#receiptMerchantList)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取回单商户列表 | [/listMerchant.action](#listMerchant)       | urlencoded           | GET   | 李飞     | 是   |
 | 获取回单信息列表 | [/listReceipts.action](#listReceipts)    | urlencoded           | GET   | 张树彬     | 是   |
 | 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
 | 获取回单详情 | [/receiptInfo.action](#receiptInfo)    | urlencoded           | GET   | 张树彬     | 是   |
@@ -417,7 +417,8 @@ Content-Length: 100
     "merchantList": [    
       {
         "merchantId": 676453,--商户ID
-        "merchantNo": "500000000621891"--商户编码
+        "merchantNo": "500000000621891",--商户编码
+	"merchantName": "小丸子3" 
       },
     ...
     ]
@@ -1726,54 +1727,6 @@ Content-Length: 100
     "minVersion":'1.2.126',//IOS最低版本
     "respTime":"20151130125253",
     "isSuccess":true,
-}
-```
-##### [返回目录↑](#content-title)
-
-
-<a id="receiptMerchantList"></a>
-### 获取回单商户列表  /receiptMerchantList
-#### 1\. 获取回单商户列表
-请求：  
-```
-GET /receiptMerchantList HTTP/1.1
-Host: mposp.21er.tk
-Date: Thu, 03 Dec 2015 10:22:53
-Content-Type: application/x-www-form-urlencoded; charset=utf-8
-Content-Length: 30
-
-appVersion: "ios.未知.1.1.813"
-```
-响应： 
-
-```
-HTTP/1.1 200 OK
-Server: Nginx
-Date: Thu, 09 Apr 2015 11:36:53 GMT
-Content-Type: application/json; charset=utf-8
-Connection: keep-alive
-Cache-Control: no-cache
-Content-Length: 100
-
-{
-    "respTime":"20151130125253",
-    "isSuccess":true,
-    "respCode":"SUCCESS",
-    "merchantList":[ //商户列表
-        {
-            "merchantNo": "Z08111111111111", //商户编号
-            "merchantName": "小丸子" //商户名称
-        }, 
-        {
-            "merchantNo": "Z08111111111112", 
-            "merchantName": "小丸子2" 
-        }, 
-	{
-            "merchantNo": "Z08111111111113", 
-            "merchantName": "小丸子3" 
-        }
-    ]
-    "respMsg":"查询成功"
 }
 ```
 ##### [返回目录↑](#content-title)
