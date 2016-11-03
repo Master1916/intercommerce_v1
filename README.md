@@ -1907,7 +1907,8 @@ Content-Length: 100
         "mobileNo":"15801376998",//联系电话
 	"replyCount":2,//重复回单次数(当回单状态为重新回单时,必传)
 	"salesSlipUUID": null,//签购单文件唯一标识
-        "standBookUUID": null//台账文件唯一标识
+        "standBookUUID": null,//台账文件唯一标识
+	"rejectDesc"      : "性别不合适"//驳回原因项(回单状态为重新回单时不为空)
     }
     "respMsg":"成功"
 }
