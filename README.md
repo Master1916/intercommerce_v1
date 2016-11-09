@@ -93,7 +93,7 @@ HTTP/1.1 403 Forbidden
 | IC回调 | [/transNotify.action](#transNotify)                      | urlencoded           | POST   | 李飞     | 是   |
 | 获取强制更新的参数 | [/getForceUpdate.action](#getForceUpdate)    | urlencoded           | GET   | 李飞     | 否   |
 | 获取回单商户列表 | [/listMerchant.action](#listMerchant)       | urlencoded           | GET   | 李飞     | 是   |
-| 获取回单信息列表 | [/listReceipts.action](#listReceipts)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取回单信息列表 | [/listReceipts.action](#listReceipts)    | urlencoded           | GET   | 李飞     | 是   |
 | 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
 | 获取回单详情 | [/receiptInfo.action](#receiptInfo)    | urlencoded           | GET   | 张树彬     | 是   |
 ----------------------------------------------------------------------------------
