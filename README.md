@@ -96,6 +96,9 @@ HTTP/1.1 403 Forbidden
 | 获取回单信息列表 | [/listReceipts.action](#listReceipts)    | urlencoded           | GET   | 李飞     | 是   |
 | 回单 | [/receipt.action](#receipt)    | urlencoded           | POST   | 张树彬     | 是   |
 | 获取回单详情 | [/receiptInfo.action](#receiptInfo)    | urlencoded           | GET   | 张树彬     | 是   |
+| 获取商户信息 | [/getMerchantInfo.action](#getMerchantInfo)    | urlencoded   | POST   | 张攀攀     | 是   |
+| 商户四要素认证和匹配 | [/authenticationMerchant.action](#authenticationMerchant)    | urlencoded  | POST   | 张攀攀     | 是   |
+| 获取成功绑定的商户列表 | [/getSueecssBindMerchantList.action](#getSueecssBindMerchantList)    | urlencoded  | POST   | 张攀攀     | 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1911,6 +1914,123 @@ Content-Length: 100
 	"rejectDesc"      : "性别不合适"//驳回原因项(回单状态为重新回单时不为空)
     }
     "respMsg":"成功"
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="getMerchantInfo"></a>
+### 获取商户详细信息  /getMerchantInfo
+#### 1\. 获取商户详细信息
+请求：  
+```
+POST /getMerchantInfo HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"merchantId":XXXXXXXX, //商户ID
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "merchantId":"XXXX", //商户id
+    "merchantNO":"XXXXXXXXXXXX", //商户编号
+    "merchantName":张树斌,  //商户名称
+    "merchantIdCard":"XXXXXXXXXXXXXXXXXX", //商户的身份证号
+    "merchantBankAcount":"XXXXXXXXXXXXXXXX" //商户的结算卡号
+}
+```
+##### [返回目录↑](#content-title)
+
+<a id="authenticationMerchant"></a>
+### 商户四要素认证和匹配  /authenticationMerchant
+#### 1\. 商户四要素认证和匹配
+请求：  
+```
+POST /authenticationMerchant HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+"merchantId":XXXXXXXX, //商户ID
+"merchantNo":XXXXXXXX, //商户编号
+"merchantName":XXXXXXXX, //商户名称
+"merchantIdCard":XXXXXXXX, //商户身份证号
+"merchantBankCard":, //商户结算卡号
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="getSueecssBindMerchantList"></a>
+### 获取成功绑定的商户列表  /getSueecssBindMerchantList
+#### 1\. 获取成功绑定的商户列表
+请求：  
+```
+POST /getSueecssBindMerchantList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"appVersion": "android.ZFT.1.2.143"
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "bindingCount": 13,
+    "bindingList": [
+    {
+    	   
+	    "merchantId": "XXXXXX",// 商户ID 
+            "merchantName": "郑******",//商户名称 
+            "merchantNo": "Z08000000026875",//商户编号
+            "status": 2,//pos机验证状态 1,等待认证，2认证成功，3认证失败，4解绑
+    ...
+    ]
 }
 ```
 ##### [返回目录↑](#content-title)
