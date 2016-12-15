@@ -417,14 +417,17 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
-    "merchantList": [    
+    "merchantList": [ 
+      {
+        "isAuth":true
+      }
       {
         "merchantId": 676453,--商户ID
         "merchantNo": "500000000621891",--商户编码
 	"merchantName": "小丸子3" 
       },
-    ...
-    ]
+      ....
+     ]
 }
 ```
 ##### [返回目录↑](#content-title)
@@ -1943,13 +1946,15 @@ Content-Type: application/json; charset=utf-8
 Connection: keep-alive
 Cache-Control: no-cache
 Content-Length: 100
-
+//如果没有通过四审返回如下             
 {
-    "merchantId":"XXXX", //商户id
-    "merchantNO":"XXXXXXXXXXXX", //商户编号
     "merchantName":张树斌,  //商户名称
     "merchantIdCard":"XXXXXXXXXXXXXXXXXX", //商户的身份证号
-    "merchantBankAcount":"XXXXXXXXXXXXXXXX" //商户的结算卡号
+}
+//如果通过四审返回如下
+{
+    "merchantName":张树斌,  //商户名称
+    "merchantBankCard":"XXXXXXXXXXXXXXXXXX", //商户结算卡号
 }
 ```
 ##### [返回目录↑](#content-title)
@@ -1971,6 +1976,7 @@ Content-Length: 30
 "merchantName":XXXXXXXX, //商户名称
 "merchantIdCard":XXXXXXXX, //商户身份证号
 "merchantBankCard":, //商户结算卡号
+"mobileNo":, //商户手机号
 ```
 响应： 
 
