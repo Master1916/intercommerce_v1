@@ -417,10 +417,9 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
+    "isAuth":true,
+    "hasPosMerchant":true,  
     "merchantList": [ 
-      {
-        "isAuth":true
-      }
       {
         "merchantId": 676453,--商户ID
         "merchantNo": "500000000621891",--商户编码
@@ -1948,11 +1947,19 @@ Cache-Control: no-cache
 Content-Length: 100
 //如果没有通过四审返回如下             
 {
+    "respTime": "20161216103350",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
     "merchantName":张树斌,  //商户名称
     "merchantIdCard":"XXXXXXXXXXXXXXXXXX", //商户的身份证号
 }
 //如果通过四审返回如下
 {
+    "respTime": "20161216103350",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
     "merchantName":张树斌,  //商户名称
     "merchantBankCard":"XXXXXXXXXXXXXXXXXX", //商户结算卡号
 }
@@ -1990,9 +1997,10 @@ Cache-Control: no-cache
 Content-Length: 100
 
 {
-    "respTime":"20151130125253",
-    "isSuccess":true,
-    "respCode":"SUCCESS",
+    "respTime": "20161216103350",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
 }
 ```
 ##### [返回目录↑](#content-title)
