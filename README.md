@@ -1933,7 +1933,7 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
 "appVersion": "android.ZFT.1.2.143"
-"merchantId":XXXXXXXX, //商户ID
+"merchantNo":XXXXXXXX, //商户NO
 ```
 响应： 
 
@@ -1951,6 +1951,8 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
+    "merchantId":xxxxx,  //商户ID
+    "merchantNo":xxxxxxxx,  //商户编号
     "merchantName":张树斌,  //商户名称
     "merchantIdCard":"XXXXXXXXXXXXXXXXXX", //商户的身份证号
 }
