@@ -417,7 +417,6 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
-    "isAuth":true,
     "hasPosMerchant":true,  
     "merchantList": [ 
       {
@@ -1945,26 +1944,67 @@ Content-Type: application/json; charset=utf-8
 Connection: keep-alive
 Cache-Control: no-cache
 Content-Length: 100
-//如果没有通过四审返回如下             
-{
-    "respTime": "20161216103350",
+
+response: {
+    "respTime": "20161220140037",
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
-    "merchantId":xxxxx,  //商户ID
-    "merchantNo":xxxxxxxx,  //商户编号
-    "merchantName":张树斌,  //商户名称
-    "merchantIdCard":"XXXXXXXXXXXXXXXXXX", //商户的身份证号
+    "merchat":     {
+    	"merchantId" : "XXXXXX",
+    	"merchantNo" : "XXXXXX"
+        "merchantName": "XXX",
+        "merchantBankCard": "XXXXXXXXXXXXXXXXX",
+        "merchantIdCard": "XXXXXXXXXXXXXXXXXX",
+        "merchantMobile": "15201059026",// 如果authCode=3 表示商户四要素认证通过 会携带该字段，你可以直接那该信息到晋中银行               	         
+ },
+    "authCode": "1" // 0、表示没有经过四审 1、表示做过四审，送过来的商户信息身份信息匹配不成功 2、表示做过四审 身份匹配成功，账号匹配不成功 3、做过四审 身份和账户匹配成功
 }
-//如果通过四审返回如下
-{
-    "respTime": "20161216103350",
-    "isSuccess": true,
-    "respCode": "SUCCESS",
-    "respMsg": "成功",
-    "merchantName":张树斌,  //商户名称
-    "merchantBankCard":"XXXXXXXXXXXXXXXXXX", //商户结算卡号
-}
+
+authCode =0 时 
+  "merchant":     {
+    	"merchantId" : "XXXXXX",
+    	"merchantNo" : "XXXXXX"
+        "merchantName": "XXX",
+        "merchantBankCard": "XXXXXXXXXXXXXXXXX",
+        "merchantIdCard": "XXXXXXXXXXXXXXXXXX",
+ }
+
+authCode =1 时 
+ "merchant":     {
+    	"merchantId" : "XXXXXX",
+    	"merchantNo" : "XXXXXX"
+        "merchantName": "XXX",
+        "merchantBankCard": "XXXXXXXXXXXXXXXXX",
+        "merchantIdCard": "XXXXXXXXXXXXXXXXXX",
+ }
+
+
+authCode =2 时
+   "merchant":     {
+    	"merchantId" : "XXXXXX",
+    	"merchantNo" : "XXXXXX"
+        "merchantName": "XXX",
+        "merchantBankCard": "XXXXXXXXXXXXXXXXX",
+        "merchantIdCard": "XXXXXXXXXXXXXXXXXX",
+ }
+
+
+authCode =3 时 
+
+  "merchant":     {
+        "merchantId" : "XXXXXX",
+    	"merchantNo" : "XXXXXX"
+        "merchantName": "XXX",
+        "merchantBankCard": "XXXXXXXXXXXXXXXXX",
+        "merchantIdCard": "XXXXXXXXXXXXXXXXXX",
+        "merchantMobile":xxxxxxxx,
+        "isNotice": "0" //0 没有电子银行 1 有电子银行
+ }
+
+
+
+
 ```
 ##### [返回目录↑](#content-title)
 
@@ -2003,6 +2043,9 @@ Content-Length: 100
     "isSuccess": true,
     "respCode": "SUCCESS",
     "respMsg": "成功",
+    "auth":true, //  true 表示验证成功 false 表示验证不成功
+    "message" : xxxxxx
+    "isNotice": "0" //0 没有电子银行 1 有电子银行
 }
 ```
 ##### [返回目录↑](#content-title)
